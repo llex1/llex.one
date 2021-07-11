@@ -1,0 +1,28 @@
+{
+  "name": "llex.one",
+  "version": "1.0.0",
+  "description": "llex.one",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "author": "ll_",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "connect": "^3.7.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "lowdb": "^1.0.0",
+    "morgan": "^1.10.0",
+    "node-fetch": "^2.6.1",
+    "nodemon": "^2.0.7",
+    "socket.io": "^4.1.1",
+    "uniqid": "^5.2.0",
+    "uuid": "^8.3.2",
+    "uuidv4": "^6.2.6",
+    "vhost": "^3.0.2"
+  }
+}
