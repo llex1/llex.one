@@ -11,7 +11,7 @@ const socket = require("socket.io");
 //dev-dependences
 const morgan = require("morgan");
 //add module
-const chatNotification = require('./socket.chatNotification');
+// const chatNotification = require('./socket.chatNotification');
 
 const _privkey = fs.readFileSync("/etc/letsencrypt/live/llex.one/privkey.pem");
 const _cert = fs.readFileSync("/etc/letsencrypt/live/llex.one/fullchain.pem");
