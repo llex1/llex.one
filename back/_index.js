@@ -1,5 +1,10 @@
+//npm module
 const express = require('express');
 const fs = require('fs/promises');
+
+//add module
+const auth = require('./_auth')
+
 
 require('dotenv').config()
 
