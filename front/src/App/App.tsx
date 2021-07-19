@@ -1,7 +1,8 @@
 import './App.scss'
 
 import { Fragment, useState } from "react";
-// import Header from './components/Header'
+import { BrowserRouter, Route } from "react-router-dom"
+import Header from './components/Header'
 import Hero from './components/Hero'
 import Chat from './components/Chat'
 
@@ -10,9 +11,13 @@ function App() {
 
   return (
     <Fragment>
-      {/* <Header /> */}
-      <Hero openChat={handleOpenChat} />
-      <Chat isOpenChat={isOpenChat} closeChat={handleOpenChat} />
+      <BrowserRouter>
+        <Route path="/">
+          <Header />
+        </Route>
+        {/* <Hero openChat={handleOpenChat} /> */}
+        {/* <Chat isOpenChat={isOpenChat} closeChat={handleOpenChat} /> */}
+      </BrowserRouter>
     </Fragment>
   )
 
