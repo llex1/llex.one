@@ -1,9 +1,11 @@
 .heroSection {
+  padding-top: 57px;
   position: relative;
   z-index: -1;
 
   .heroTitle{
     // font-family: inherit;
+    margin-bottom: 1em;
     font-size: 24px;
     font-weight: 400;
     line-height: 1.2;
@@ -11,6 +13,7 @@
   }
   .h1{
     // font-family: inherit;
+    margin: 0 0 19px;
     font-size: 60px;
     font-weight: 700;
     line-height: 1.2;
@@ -27,7 +30,7 @@
   .heroButton{
     width: 200px;
     height: 60px;
-    background-color: #007AFF;
+    background-color: #0060E0;
     color: #FDFDFF;
     border: none;
     border-radius: 10px;
@@ -38,32 +41,52 @@
   width: 372px;
   height: 186px;
   border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-  background-color: #efa00b;
+  background-color: rgba(239, 159, 11, 0.35);
+  filter: blur(125px);
+  transform-origin: top right;
   transform: rotate(-45deg);
-  // filter: blur(125px);
   position: absolute;
-  top: 370px;
-  right: 182px;
+  top: 107px;
+  right: 371px;
 }
 .bgBlue{
   width: 372px;
   height: 186px;
   border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-  background-color: rgba(0, 123, 255, 0.7);
+  background-color: rgba(0, 123, 255, 0.5);
+  filter: blur(125px);
+  transform-origin: top right;
   transform: rotate(-45deg);
-  // filter: blur(125px);
   position: absolute;
   top: -116px;
-  right: 42px;
+  right: 175px;
 }
 .bgPink{
   width: 372px;
   height: 186px;
   border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-  background-color: #FF69B2;
+  background-color: rgba(255, 105, 178, 0.35);
+  filter: blur(125px);
+  transform-origin: top right;
   transform: rotate(-45deg);
-  // filter: blur(125px);
   position: absolute;
-  top: 20px;
-  right: 42px;
+  top: 0;
+  right: 397px;
+}
+.bgYellow{
+  width: 372px;
+  height: 186px;
+  border-radius: 0 0 50% 50% / 0 0 100% 100%;
+  background-color: rgba(255, 238, 202, 0.7);
+  filter: blur(125px);
+  transform-origin: top right;
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 109px;
+  right: 222px;
+}
+.heroImg{
+  position: absolute;
+  top: 0;
+  right: 100px;
 }
