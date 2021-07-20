@@ -14,6 +14,7 @@ function App() {
       <BrowserRouter>
         <Route path="/">
           <Header />
+          <Hero/>
         </Route>
         {/* <Hero openChat={handleOpenChat} /> */}
         {/* <Chat isOpenChat={isOpenChat} closeChat={handleOpenChat} /> */}

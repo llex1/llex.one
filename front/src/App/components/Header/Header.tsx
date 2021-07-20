@@ -1,4 +1,5 @@
-import { NavLink } from "react-router-dom";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import styles from './Header.module.scss';
 
@@ -6,16 +7,22 @@ import styles from './Header.module.scss';
 
 
 function Header() {
+  const [isBurgerMenuOpen, handleBurgerMenu] = useState(false)
+
+
+
+
 
   return (
     <header className={`container ${styles.header}`}>
-      <NavLink to='/' className={styles.logo}></NavLink>
-      <ul>
-        <li><NavLink to='/'>About</NavLink></li>
-        <li><NavLink to='/'>Services</NavLink></li>
-        <li><NavLink to='/'>Works</NavLink></li>
-        <li><NavLink to='/'>Contacts</NavLink></li>
+      <Link to='/' className={styles.logo}></Link>
+      <ul className={styles.navList}>
+        <li><Link to='/'>About</Link></li>
+        <li><Link to='/'>Services</Link></li>
+        <li><Link to='/'>Works</Link></li>
+        <li><Link to='/'>Contacts</Link></li>
       </ul>
+      <button className={styles.buttonMenu} onClick={()=>handleBurgerMenu(!isBurgerMenuOpen)} ><span className={`${styles.burgerIcon} ${isBurgerMenuOpen && styles.close}`}></span></button>
       {/* <div className={`container ${styles.header}`}>llex.one</div> */}
     </header>
   )
