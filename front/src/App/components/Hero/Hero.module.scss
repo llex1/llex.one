@@ -2,8 +2,9 @@
   padding-top: 57px;
   position: relative;
   z-index: -1;
+  margin-bottom: 270px;
 
-  .heroTitle{
+  .heroTitle {
     // font-family: inherit;
     margin-bottom: 1em;
     font-size: 24px;
@@ -11,82 +12,172 @@
     line-height: 1.2;
     color: #666;
   }
-  .h1{
+  .h1 {
     // font-family: inherit;
     margin: 0 0 19px;
     font-size: 60px;
     font-weight: 700;
     line-height: 1.2;
-    color: #25202F;
+    color: #25202f;
   }
-  .heroText{
+  .heroText {
     // font-family: inherit;
     font-size: 24px;
     font-weight: 400;
     line-height: 1.33;
-    color: #25202F;
+    color: #25202f;
     margin-bottom: 50px;
   }
-  .heroButton{
+  .heroButton {
     width: 200px;
     height: 60px;
-    background-color: #0060E0;
-    color: #FDFDFF;
+    background-color: #0060e0;
+    color: #fdfdff;
     border: none;
     border-radius: 10px;
   }
+}
+.bg {
+  position: absolute;
+  display: inline-block;
+  width: 372px;
+  height: 186px;
+  filter: blur(125px);
+  transform-origin: top right;
+  transform: rotate(-45deg);
 
+  &.bgOrange {
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    background-color: rgba(239, 159, 11, 0.35);
+    top: 107px;
+    right: 371px;
+  }
+  &.bgBlue {
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    background-color: rgba(0, 123, 255, 0.5);
+    top: -116px;
+    right: 175px;
+  }
+  &.bgPink {
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    background-color: rgba(255, 105, 178, 0.35);
+    top: 0;
+    right: 397px;
+  }
+  &.bgYellow {
+    border-radius: 0 0 50% 50% / 0 0 100% 100%;
+    background-color: rgba(255, 238, 202, 0.7);
+    top: 109px;
+    right: 222px;
+  }
 }
-.bgOrange {
-  width: 372px;
-  height: 186px;
-  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-  background-color: rgba(239, 159, 11, 0.35);
-  filter: blur(125px);
-  transform-origin: top right;
-  transform: rotate(-45deg);
-  position: absolute;
-  top: 107px;
-  right: 371px;
-}
-.bgBlue{
-  width: 372px;
-  height: 186px;
-  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-  background-color: rgba(0, 123, 255, 0.5);
-  filter: blur(125px);
-  transform-origin: top right;
-  transform: rotate(-45deg);
-  position: absolute;
-  top: -116px;
-  right: 175px;
-}
-.bgPink{
-  width: 372px;
-  height: 186px;
-  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-  background-color: rgba(255, 105, 178, 0.35);
-  filter: blur(125px);
-  transform-origin: top right;
-  transform: rotate(-45deg);
-  position: absolute;
-  top: 0;
-  right: 397px;
-}
-.bgYellow{
-  width: 372px;
-  height: 186px;
-  border-radius: 0 0 50% 50% / 0 0 100% 100%;
-  background-color: rgba(255, 238, 202, 0.7);
-  filter: blur(125px);
-  transform-origin: top right;
-  transform: rotate(-45deg);
-  position: absolute;
-  top: 109px;
-  right: 222px;
-}
-.heroImg{
+.heroImg {
   position: absolute;
   top: 0;
   right: 100px;
+}
+.iconWavePink {
+  width: 62px;
+  height: 44px;
+  fill: #f12b5c;
+  position: absolute;
+  top: 26px;
+  right: 74px;
+}
+.iconWaveGreen {
+  width: 48px;
+  height: 34px;
+  fill: #61b226;
+  position: absolute;
+  top: 335px;
+  right: 635px;
+}
+.dots {
+  position: absolute;
+  top: 22px;
+  right: -68px;
+  display: inline-block;
+  width: 77px;
+  height: 90px;
+  background-color: #8643dc;
+  mask: url("../../assets/img/dots.svg");
+  mask-repeat: repeat-y;
+  transform-origin: top right;
+  transform: rotate(-45deg);
+}
+.circle {
+  position: absolute;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border: none;
+  border-radius: 50%;
+  &.circleOne {
+    top: -141px;
+    right: 197px;
+    background-color: #f57dc8;
+  }
+  &.circleTwo {
+    top: 4px;
+    right: 591px;
+    background-color: #ff59c1;
+  }
+  &.circleThrie {
+    top: 93px;
+    right: 66px;
+    background-color: #43dc77;
+  }
+  &.circleFour {
+    top: 575px;
+    right: 489px;
+    background-color: #8643dc;
+  }
+}
+.cros{
+  position:absolute;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  &::before{
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 2px;
+    position:absolute;
+    top: 0;
+    left: 0;
+    transform-origin: top left;
+    transform: rotate(45deg) translate(1px, -1px);
+  }
+  &::after{
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 2px;
+    position:absolute;
+    top: 0;
+    left: 0;
+    transform-origin: bottom right;
+    transform: rotate(-45deg) translate(-1px, -2px);
+  }
+  &.crosOne{
+    top: 145px;
+    right: -87px;
+    &::before{
+      background-color: #8643DC;
+    }
+    &::after{
+      background-color: #8643DC;
+    }
+  }
+  &.crosTwo{
+    top: 455px;
+    right: -2px;
+    &::before{
+      background-color: #09E6DF;
+    }
+    &::after{
+      background-color: #09E6DF;
+    }
+  }
 }
