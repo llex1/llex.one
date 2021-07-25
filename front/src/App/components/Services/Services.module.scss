@@ -1,5 +1,5 @@
 .services{
-
+  margin-bottom: 100px;
 }
 
 .servicesTitle {
@@ -27,7 +27,49 @@
   font-weight: 700;
   line-height: 1.33;
   color: #25202F;
+  margin-bottom: 43px;
 }
-.iconApi{
-  fill: red;
+.servicesList {
+  display: flex;
+  list-style: none;
+  &>li:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+.servicesListTitle{
+  position: relative;
+  height: 80px;
+  margin: 0 0 20px;
+  padding: 0 0 0 85px;
+  display: flex;
+  align-items: center;
+  // font-family: 'Mina', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.59;
+  color: #25202F;
+
+  & .iconBg{
+    position: absolute;
+    top: -4px;
+    left: 0;
+    width: 84px;
+    height: 79px;
+  }
+  & .icon{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left:25px;
+    width: 24px;
+    height: 24px;
+    fill: #fdfdff;
+  } 
+}
+.servicesListText{
+  // font-family: 'Mina', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.94;
+  color: #47444E;
 }
