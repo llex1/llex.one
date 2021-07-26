@@ -1,6 +1,7 @@
 .portfolio {
   position: relative;
-  height: 500px;
+  margin-bottom: 168px;
+  // height: 500px;
   &::before{
     content: "";
     position: absolute;
@@ -50,5 +51,33 @@
       text-decoration: underline;
       color: #25202F;
   }
+}
+.contentBlock {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  
+  &>li{
+    width: 540px;
+    height: 427px;
+    position: relative;
+    // border: none;
+    // border-radius: 2rem;
+    // background-color: #fdfdfd;
+    // filter: blur(2px);
+  }
+  .royalPark01{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    box-shadow: 0px 20px 50px rgba(168, 170, 188, 0.3);
+  }
+  .royalPark02{
+    position: absolute;
+    right: 0;
+    top: 0;
+    box-shadow: 0px 20px 50px rgba(168, 170, 188, 0.3);
+  }
+
 
 }
