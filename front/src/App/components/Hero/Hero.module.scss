@@ -34,7 +34,7 @@
     background-color: #0060e0;
     color: #fdfdff;
     border: none;
-    border-radius: 10px;
+    border-radius: 50px;
   }
 }
 .bg {
@@ -71,26 +71,50 @@
     right: 222px;
   }
 }
+.polygonOne {
+  position: absolute;
+  top: -68px;
+  right: -65px;
+  width: 656px;
+  height: 625px;
+  fill: rgba(216, 243, 255, 0.9);
+}
+.polygonTwo {
+  position: absolute;
+  top: -83px;
+  right: -13px;
+  width: 630px;
+  height: 643px;
+  fill: #3d4856;
+}
 .heroImg {
   position: absolute;
   top: 0;
-  right: 100px;
+  right: 103px;
 }
-.iconWavePink {
-  width: 62px;
-  height: 44px;
-  fill: #f12b5c;
+.wave {
   position: absolute;
-  top: 26px;
-  right: 74px;
-}
-.iconWaveGreen {
-  width: 48px;
-  height: 34px;
-  fill: #61b226;
-  position: absolute;
-  top: 335px;
-  right: 635px;
+  &.wavePink {
+    top: 26px;
+    right: 77px;
+    width: 62px;
+    height: 44px;
+    fill: #f12b5c;
+  }
+  &.waveGreen {
+    top: 335px;
+    right: 635px;
+    width: 48px;
+    height: 34px;
+    fill: #61b226;
+  }
+  &.waveWhite {
+    top: 398px;
+    right: 76px;
+    width: 62px;
+    height: 44px;
+    fill: #fdfdff;
+  }
 }
 .dots {
   position: absolute;
@@ -133,51 +157,51 @@
     background-color: #8643dc;
   }
 }
-.cros{
-  position:absolute;
+.cros {
+  position: absolute;
   display: inline-block;
   width: 12px;
   height: 12px;
-  &::before{
+  &::before {
     content: "";
     display: inline-block;
     width: 14px;
     height: 2px;
-    position:absolute;
+    position: absolute;
     top: 0;
     left: 0;
     transform-origin: top left;
     transform: rotate(45deg) translate(1px, -1px);
   }
-  &::after{
+  &::after {
     content: "";
     display: inline-block;
     width: 14px;
     height: 2px;
-    position:absolute;
+    position: absolute;
     top: 0;
     left: 0;
     transform-origin: bottom right;
     transform: rotate(-45deg) translate(-1px, -2px);
   }
-  &.crosOne{
+  &.crosOne {
     top: 145px;
-    right: -87px;
-    &::before{
-      background-color: #8643DC;
+    right: -95px;
+    &::before {
+      background-color: #8643dc;
     }
-    &::after{
-      background-color: #8643DC;
+    &::after {
+      background-color: #8643dc;
     }
   }
-  &.crosTwo{
+  &.crosTwo {
     top: 455px;
     right: -2px;
-    &::before{
-      background-color: #09E6DF;
+    &::before {
+      background-color: #09e6df;
     }
-    &::after{
-      background-color: #09E6DF;
+    &::after {
+      background-color: #09e6df;
     }
   }
 }
