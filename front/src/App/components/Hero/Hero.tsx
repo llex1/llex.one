@@ -2,11 +2,29 @@ import styles from './Hero.module.scss';
 import heroImg from '../../assets/img/hero.png';
 import heroImg2x from '../../assets/img/hero@2x.png';
 import icons from '../../assets/img/icons.svg';
+import { useEffect } from 'react';
 
 function Hero(props: any) {
 
+
+
+
+  useEffect(
+    () => {
+      function handler(ev:MouseEvent) {
+        console.log(ev && ev.target);
+      }
+      document.addEventListener('click', handler)
+      return () => {
+        document.removeEventListener('click', handler);
+      }
+    }
+  )
+
+
   return (
     <section className={`container ${styles.heroSection}`}>
+      <p>Hero</p>
       <p className={styles.heroTitle}>Hello,</p>
       <h1 className={styles.h1}>Alex Tsurka</h1>
       <p className={styles.heroText}> Full Stack Developer</p>
@@ -27,7 +45,6 @@ function Hero(props: any) {
         <source srcSet={`${heroImg} 1x, ${heroImg2x} 2x`} media="(min-width: 1440px)" />
         <img className={styles.heroImg} src={heroImg} alt="The boy is at the computer." />
       </picture>
-
       <svg className={`${styles.wave} ${styles.wavePink}`} width="62px">
         <use href={`${icons}#wave`}></use>
       </svg>

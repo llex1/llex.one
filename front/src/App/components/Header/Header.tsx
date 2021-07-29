@@ -15,7 +15,7 @@ function Header() {
 
   return (
     <header className={`container ${styles.header}`}>
-      <Link to='/' className={styles.logo}></Link>
+      <Link to='/' className={styles.logo}><span>1</span>lex.one</Link>
       <ul className={styles.navList}>
         <li><Link to='/'>About</Link></li>
         <li><Link to='/'>Services</Link></li>
