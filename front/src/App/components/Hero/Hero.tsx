@@ -24,7 +24,6 @@ function Hero(props: any) {
 
   return (
     <section className={`container ${styles.heroSection}`}>
-      <p>Hero</p>
       <p className={styles.heroTitle}>Hello,</p>
       <h1 className={styles.h1}>Alex Tsurka</h1>
       <p className={styles.heroText}> Full Stack Developer</p>
