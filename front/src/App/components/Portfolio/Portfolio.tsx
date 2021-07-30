@@ -25,10 +25,6 @@ function Portfolio() {
             <img className={styles.royalPark01} src={royalPark01} alt="" />
           </li>
         </ul>
-        <div className={styles.textBlock}>
-          <h2 className={styles.textBlockH2}>Little Deal</h2>
-          <Link to="/" className={styles.textBlockShowMore}>Explore More</Link>
-        </div>
       </div>
     </section>
   )

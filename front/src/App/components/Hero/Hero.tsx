@@ -38,10 +38,7 @@ function Hero(props: any) {
         <svg className={styles.polygonTwo}>
           <use href={`${icons}#polygon2`}></use>
         </svg>
-        {/* <span className={`${styles.bg} ${styles.bgYellow}`}></span>
-        <span className={`${styles.bg} ${styles.bgPink}`}></span>
-        <span className={`${styles.bg} ${styles.bgBlue}`}></span>
-        <span className={`${styles.bg} ${styles.bgOrange}`}></span> */}
+
         <picture>
           {/* <source srcset="./images/......webp 1x, ./images/.....@2x.webp 2x" media="(min-width: 1440px)" type="image/webp"> */}
           <source srcSet={`${heroImg} 1x, ${heroImg2x} 2x`} media="(min-width: 1280px)" />
@@ -58,7 +55,6 @@ function Hero(props: any) {
         </svg>
 
 
-        {/* <span className={styles.dots}></span> */}
         <span className={`${styles.circle} ${styles.circleOne}`}></span>
         <span className={`${styles.circle} ${styles.circleTwo}`}></span>
         <span className={`${styles.circle} ${styles.circleThrie}`}></span>

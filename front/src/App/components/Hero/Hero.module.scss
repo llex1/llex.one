@@ -1,5 +1,7 @@
 .heroSection {
-  background-image: url('../../assets/img/dots2.svg'), url('../../assets/img/cros1.svg');
+  background-image: 
+    url("../../assets/img/dots.svg"),
+    url("../../assets/img/cros.svg");
   background-position: calc(50vw + 566px) 22px, calc(50vw + 639px) 145px;
   background-repeat: no-repeat;
 
@@ -35,7 +37,6 @@
   .heroButton {
     width: 200px;
     height: 60px;
-    // background-color: #0060e0;
     color: #fdfdff;
     border: none;
     border-radius: 50px;
@@ -44,40 +45,6 @@
     cursor: pointer;
   }
 }
-// .bg {
-//   position: absolute;
-//   display: inline-block;
-//   width: 372px;
-//   height: 186px;
-//   filter: blur(120px);
-//   transform-origin: top right;
-//   transform: rotate(-45deg);
-
-//   &.bgOrange {
-//     border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-//     background-color: rgba(239, 159, 11, 0.35);
-//     top: 107px;
-//     right: 371px;
-//   }
-//   &.bgBlue {
-//     border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-//     background-color: rgba(0, 123, 255, 0.5);
-//     top: -116px;
-//     right: 175px;
-//   }
-//   &.bgPink {
-//     border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-//     background-color: rgba(255, 105, 178, 0.35);
-//     top: 0;
-//     right: 397px;
-//   }
-//   &.bgYellow {
-//     border-radius: 0 0 50% 50% / 0 0 100% 100%;
-//     background-color: rgba(255, 238, 202, 0.7);
-//     top: 109px;
-//     right: 222px;
-//   }
-// }
 .polygonOne {
   position: absolute;
   top: -92px;
@@ -125,19 +92,6 @@
     height: 44px;
     fill: #fdfdff;
   }
-}
-.dots {
-  position: absolute;
-  top: 22px;
-  right: -68px;
-  display: inline-block;
-  width: 77px;
-  height: 90px;
-  background-color: #8643dc;
-  mask: url("../../assets/img/dots.svg");
-  mask-repeat: repeat-y;
-  transform-origin: top right;
-  transform: rotate(-45deg);
 }
 .circle {
   position: absolute;
