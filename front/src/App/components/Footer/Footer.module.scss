@@ -1,11 +1,35 @@
 .footer{
   position: relative;
-  // padding-top: 160px;
-
-
-  .footerBgWave{
+  min-height: 400px;
+  margin-bottom: 200px;
+  background-image: url("../../assets/img/wave-3.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  // background: 
+  //   linear-gradient(
+  //     180deg, 
+  //   #fff 0px, 
+  //   #fff 319px, 
+  //   #a0423f 320px, 
+  //   #a0423f 100%);
+    // #F6F8FF 100%);
+}
+.footerTitle {
+  padding-top: 50px;
+  position: relative;
+  // font-family: 'Mina', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.61;
+  color: #0060E0;
+  margin-bottom: 22px;
+  &::before{
+    content: "";
     position: absolute;
-    top: 0;
-    left: 0;
+    bottom: -5px;
+    display: inline-block;
+    width: 50px;
+    height: 2px;
+    background-color: #0060E0;
   }
 }
