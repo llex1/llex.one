@@ -14,6 +14,14 @@ body {
   background: url("./assets/img/bodyBg.svg");
   background-position: calc(50vw - 922px) -220px;
   background-repeat: no-repeat;
+  &::before{
+    content: "alpha, only desktop resolution";
+    color: red;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 4;
+  }
 }
 // .btn{
 //   position: relative;

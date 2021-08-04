@@ -16,13 +16,13 @@ function Portfolio() {
           <Link to="/" className={styles.textBlockShowMore}>Explore More</Link>
         </div>
         <ul className={styles.contentBlock}>
-          <li>
-            <img className={styles.royalPark02} src={royalPark02} alt="" />
-            <img className={styles.royalPark01} src={royalPark01} alt="" />
+          <li className={styles.contentBlockItem__blue}>
+            <img className={styles.contentBlock__img1} src={royalPark02} alt="" />
+            <img className={styles.contentBlock__img2} src={royalPark01} alt="" />
           </li>
-          <li>
-            <img className={styles.royalPark02} src={royalPark02} alt="" />
-            <img className={styles.royalPark01} src={royalPark01} alt="" />
+          <li className={styles.contentBlockItem__yellow}>
+            <img className={styles.contentBlock__img1} src={royalPark02} alt="" />
+            <img className={styles.contentBlock__img2} src={royalPark01} alt="" />
           </li>
         </ul>
       </div>
