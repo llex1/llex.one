@@ -1,5 +1,3 @@
-
-
 import icons from '../../assets/img/icons.svg';
 import styles from './Footer.module.scss';
 
@@ -21,9 +19,20 @@ function Footer() {
           <input type="text" placeholder="Tell me about your project" />
           <div className={styles.buttonBlock}>
             <input className={styles.button} type="submit" />
-            <input type="file" name="" id="" />
+            <label className={styles.attachLabel}>
+              <svg className={styles.attachImg} width="18" height="18">
+                <use href={`${icons}#attach`}></use>
+              </svg>
+              <input className={styles.attach} type="file" name="" id="" />
+            </label>
           </div>
         </form>
+        <p className={styles.socialListTitle}>Let’s be Friends</p>
+        <ul className={styles.socialList}>
+          <li>Instagram</li>
+          <li>Linkedin</li>
+          <li>Facebook</li>
+        </ul>
       </div>
     </footer>
   )
