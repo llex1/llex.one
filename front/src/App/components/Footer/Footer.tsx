@@ -29,9 +29,24 @@ function Footer() {
         </form>
         <p className={styles.socialListTitle}>Let’s be Friends</p>
         <ul className={styles.socialList}>
-          <li>Instagram</li>
-          <li>Linkedin</li>
-          <li>Facebook</li>
+          <li><svg className={styles.iconBg}>
+            <use href={`${icons}#services`}></use>
+          </svg>
+            <svg className={styles.icon}>
+              <use href={`${icons}#web`}></use>
+            </svg></li>
+          <li><svg className={styles.iconBg}>
+            <use href={`${icons}#services`}></use>
+          </svg>
+            <svg className={styles.icon}>
+              <use href={`${icons}#web`}></use>
+            </svg></li>
+          <li><svg className={styles.iconBg}>
+            <use href={`${icons}#services`}></use>
+          </svg>
+            <svg className={styles.icon}>
+              <use href={`${icons}#web`}></use>
+            </svg></li>
         </ul>
       </div>
     </footer>
