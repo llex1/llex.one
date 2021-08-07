@@ -92,14 +92,14 @@
       box-shadow: 0px 20px 50px rgba(0, 96, 224, 0.25);
       cursor: pointer;
     }
-    .attach{
+    .attach {
       display: none;
     }
     .attachLabel {
       cursor: pointer;
     }
     .attachImg {
-      top:0;
+      top: 0;
       left: 0;
     }
   }
@@ -117,4 +117,30 @@
   list-style: none;
   display: flex;
   justify-content: center;
+  margin-bottom: 18px;
+  & > li {
+    position: relative;
+    width: 75px;
+    height: 72px;
+  }
+  & > li:not(:last-child) {
+    margin-right: 18px;
+  }
+  .iconBg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 55px;
+    height: 50px;
+  }
+  .icon {
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-53%, -45%);
+    width: 24px;
+    height: 24px;
+    fill: #fdfdff;
+  }
 }
