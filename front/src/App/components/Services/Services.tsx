@@ -34,7 +34,7 @@ function Services() {
               <use href={`${icons}#services`}></use>
             </svg>
             <svg className={styles.icon}>
-              <use href={`${icons}#web`}></use>
+              <use href={`${icons}#http`}></use>
             </svg>
             Web Development
           </p>
@@ -47,7 +47,7 @@ function Services() {
               <use href={`${icons}#services`}></use>
             </svg>
             <svg className={styles.icon}>
-              <use href={`${icons}#web`}></use>
+              <use href={`${icons}#micro`}></use>
             </svg>
             Web Development
           </p>
