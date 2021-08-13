@@ -25,28 +25,5 @@ class Server {
 
 // new Server().runServre()
 // console.log(net);
-
-
-const echo = ()=>{
-  x = 100;
-  console.log('thit is echo');
-  return x
-}
-
-
-const tango = (mike1) => (mike2) => {
-  console.log('we have ', mike1, 'and ', mike2);
-  console.log(x);
-}
-const papa = tango(echo())
-papa('Alex')
-
-
-
-
-
-
-
-
 // ==================================
 
