@@ -1,3 +1,4 @@
+import {useState, useEffect} from 'react';
 import styles from './Hero.module.scss';
 import heroImg from '../../assets/img/hero.png';
 import heroImg2x from '../../assets/img/hero@2x.png';
@@ -5,10 +6,11 @@ import icons from '../../assets/img/icons.svg';
 // import { useEffect } from 'react';
 
 function Hero(props: any) {
+  const [isChatOpen, handleChat] = useState(false);
 
-
-
-
+  useEffect(()=>{
+    console.log(isChatOpen);
+  }, [isChatOpen])
   // useEffect(
   //   () => {
   //     function handler(ev:MouseEvent) {
@@ -30,7 +32,7 @@ function Hero(props: any) {
         <p className={styles.heroTitle}>Hello,</p>
         <h1 className={styles.h1}>Alex Tsurka</h1>
         <p className={styles.heroText}> Full Stack Developer</p>
-        <button className={styles.heroButton}>Let’s Talk</button>
+        <button className={styles.heroButton} onClick={()=>{handleChat(!isChatOpen)}} >Let’s Talk</button>
 
         <svg className={styles.polygonOne}>
           <use href={`${icons}#polygon1`}></use>
