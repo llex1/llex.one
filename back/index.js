@@ -23,13 +23,11 @@ class Server {
   }
 }
 
-new Server().runServre()
+// new Server().runServre()
 console.log(net);
 
 
-
-
+ 
 
 
 // ==================================
-
