@@ -1,10 +1,10 @@
-const http = require('http');
 const express  = require('express');
-const net = require('net')
+require('dotenv').config();
 
 class Server {
   constructor(){
     this.demon = null;
+    this.PORT  = process.env.PORT;
   }
   initDemon(){
     this.demon = express()
@@ -19,12 +19,11 @@ class Server {
     this.initDemon()
     this.initMiddlewares()
     this.initRoutes()
-    this.demon.listen('8080', () => console.log('server is running on port 8080'))
+    this.demon.listen(this.PORT, () => console.log('server is running on port 8080'))
   }
 }
 
 // new Server().runServre()
-console.log(net);
 
 
  
