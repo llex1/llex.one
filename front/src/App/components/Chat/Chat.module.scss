@@ -165,7 +165,8 @@
       transform: translate(-50%, -50%);
       border: 1px solid dodgerblue;
       border-radius: 0.5rem;
-      background-color: ghostwhite;
+      resize: both;
+      overflow: scroll;
       .chatModal__title{
         height: 3rem;
         padding: 0 1rem;
@@ -181,35 +182,38 @@
         padding: 1rem;
         position: relative;
         border-radius: 50%;
-        border: 1px solid gainsboro;
+        border: none;
+        cursor: pointer;
         &::before{
           content: "";
           display: inline-block;
-          width: 2rem;
+          width: 1.5rem;
           height: 2px;
           background-color: black;
+          border-radius: 2px;
           position: absolute;
-          top: 0;
+          top: 1rem;
           left: 0;
           transform: rotate(-45deg);
         }
         &::after{
           content: "";
           display: inline-block;
-          width: 2rem;
+          width: 1.5rem;
           height: 2px;
           background-color: black;
+          border-radius: 2px;
           position: absolute;
-          top: 0;
+          top: 1rem;
           left: 0;
           transform: rotate(45deg);
         }
       }
       .chatModal_field{
-        height: calc(100% - 2rem);
+        height: calc(100% - 3rem);
         border-bottom-left-radius: 0.5rem;
         border-bottom-right-radius: 0.5rem;
-        background-color: gold;
+        background-color: ghostwhite;
       }
 
 

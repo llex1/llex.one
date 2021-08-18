@@ -19,7 +19,7 @@ function App() {
     <Fragment>
       <BrowserRouter>
         <Route path="/">
-          <Chat isOpenChat={isOpenChat} closeChat={handleOpenChat}/>
+          {isOpenChat && (<Chat openChat={handleOpenChat}/>)}
           <Header />
           <Hero openChat={handleOpenChat}/>
           <Services/>
