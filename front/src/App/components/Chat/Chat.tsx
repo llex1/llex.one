@@ -13,23 +13,27 @@ function Chat({ /* isOpenChat, */ openChat }: Props) {
 
   const [modalStyle, changeStyle] = useState({})
 
-  function modalChangePosition(event:any):void {
-    let modal:any = document.querySelector('#modal')
-    
-    console.log(event.clientX, 'Client X');
-    console.log(event.offsetX, 'Offset X');
-    console.dir(modal);
 
-    // changeStyle({top: `${event.clientY - event.offsetY}px`, left: `${event.clientX - event.offsetX}px`, transform: 'translate(0, 0)'})
+  function modalMoveProcessing(event:any):void {
+    let modal:any = document.querySelector('#modal')
+    console.dir(modal);
+    console.log(event.movementX);
+    console.log(event.movementY);
+    
+  
+    // 640*480
+    // offsetTop: 255
+    // offsetLeft: 720
+    changeStyle({top: `${modal.offsetTop+event.movementY}px`, left: `${modal.offsetLeft+event.movementX}px`})
   }
 
-  function modalMove(): void {
-    document.addEventListener('mousemove', modalChangePosition)
+  function modalMoveStart(): void {
+    document.addEventListener('mousemove', modalMoveProcessing)
     document.addEventListener('mouseup', modalMoveStop)
     console.log('CLIC');
   }
   function modalMoveStop(): void {
-    document.removeEventListener('mousemove', modalChangePosition)
+    document.removeEventListener('mousemove', modalMoveProcessing)
     document.removeEventListener('mouseup', modalMoveStop)
     console.log('UNCLIC');
   }
@@ -48,7 +52,7 @@ function Chat({ /* isOpenChat, */ openChat }: Props) {
         <div className={styles.chatWrapper}>
           <div className={styles.chatModal} id="modal" style={modalStyle}>
 
-            <div className={styles.chatModal__title} onMouseDown={modalMove}>
+            <div className={styles.chatModal__title} onMouseDown={modalMoveStart}>
               modal window
               <span className={styles.chatModal__title__close} onClick={() => {
                 openChat(false)
