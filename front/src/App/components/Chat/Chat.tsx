@@ -18,8 +18,17 @@ function Chat({ isOpenChat, closeChat }: Props) {
       {isOpenChat && (
         <div className={styles.chatWrapper}>
           <div className={styles.chatModal}>
-            <div className={styles.chatModal__title}>modal window<span className={styles.chatModal__title__close}></span></div>
+
+            <div className={styles.chatModal__title}>
+              modal window
+              <span className={styles.chatModal__title__close}></span>
+            </div>
+
+
+
             <div className={styles.chatModal_field}>
+
+
 
             </div>
           </div>

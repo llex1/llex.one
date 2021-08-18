@@ -167,7 +167,7 @@
       border-radius: 0.5rem;
       background-color: ghostwhite;
       .chatModal__title{
-        height: 2rem;
+        height: 3rem;
         padding: 0 1rem;
         display: flex;
         align-items: center;
@@ -177,25 +177,32 @@
         background-color: goldenrod;
       }
       .chatModal__title__close{
+        display: block;
+        padding: 1rem;
         position: relative;
-        // padding: 0.8rem;
         border-radius: 50%;
         border: 1px solid gainsboro;
         &::before{
           content: "";
+          display: inline-block;
+          width: 2rem;
+          height: 2px;
+          background-color: black;
           position: absolute;
           top: 0;
           left: 0;
-          width: 2rem;
-          height: 2px;
+          transform: rotate(-45deg);
         }
         &::after{
           content: "";
+          display: inline-block;
+          width: 2rem;
+          height: 2px;
+          background-color: black;
           position: absolute;
           top: 0;
           left: 0;
-          width: 2rem;
-          height: 2px;
+          transform: rotate(45deg);
         }
       }
       .chatModal_field{
