@@ -3,7 +3,9 @@ const express = require("express");
 const { MongoClient } = require("mongodb");
 
 const db = new MongoClient(process.env.DB);
-console.log(MongoClient.toString());
+// console.log(MongoClient.toString());
+db.connect()
+db.close()
 
 class Server {
   constructor() {
@@ -30,5 +32,4 @@ class Server {
 }
 
 // new Server().runServre()
-
 // ==================================

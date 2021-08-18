@@ -5,23 +5,9 @@ import heroImg2x from '../../assets/img/hero@2x.png';
 import icons from '../../assets/img/icons.svg';
 // import { useEffect } from 'react';
 
-function Hero(props: any) {
-  const [isChatOpen, handleChat] = useState(false);
+import Chat from '../Chat'
 
-  useEffect(()=>{
-    console.log(isChatOpen);
-  }, [isChatOpen])
-  // useEffect(
-  //   () => {
-  //     function handler(ev:MouseEvent) {
-  //       console.log(ev && ev.target);
-  //     }
-  //     document.addEventListener('click', handler)
-  //     return () => {
-  //       document.removeEventListener('click', handler);
-  //     }
-  //   }
-  // )
+function Hero(prop:{openChat:(value:boolean) => void}) {
 
 
   return (
@@ -32,7 +18,7 @@ function Hero(props: any) {
         <p className={styles.heroTitle}>Hello,</p>
         <h1 className={styles.h1}>Alex Tsurka</h1>
         <p className={styles.heroText}> Full Stack Developer</p>
-        <button className={styles.heroButton} onClick={()=>{handleChat(!isChatOpen)}} >Let’s Talk</button>
+        <button className={styles.heroButton} onClick={()=>prop.openChat(true)} >Let’s Talk</button>
 
         <svg className={styles.polygonOne}>
           <use href={`${icons}#polygon1`}></use>
@@ -46,6 +32,7 @@ function Hero(props: any) {
           <source srcSet={`${heroImg} 1x, ${heroImg2x} 2x`} media="(min-width: 1280px)" />
           <img className={styles.heroImg} src={heroImg} alt="The boy is at the computer." />
         </picture>
+
         <svg className={`${styles.wave} ${styles.wavePink}`} width="62px">
           <use href={`${icons}#wave`}></use>
         </svg>

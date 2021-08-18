@@ -11,9 +11,9 @@
 body {
   font-family: 'Mina', sans-serif;
   // font-size: 14px;
-  background: url("./assets/img/bodyBg.svg");
-  background-position: calc(50vw - 922px) -220px;
-  background-repeat: no-repeat;
+  // background: url("./assets/img/bodyBg.svg");
+  // background-position: calc(50vw - 922px) -220px;
+  // background-repeat: no-repeat;
   &::before{
     content: "alpha, only desktop resolution";
     color: red;

@@ -10,7 +10,7 @@ import Boast from './components/Boast'
 import Footer from './components/Footer'
 
 
-// import Chat from './components/Chat'
+import Chat from './components/Chat'
 
 function App() {
   const [isOpenChat, handleOpenChat] = useState(false)
@@ -19,8 +19,9 @@ function App() {
     <Fragment>
       <BrowserRouter>
         <Route path="/">
+          <Chat isOpenChat={isOpenChat} closeChat={handleOpenChat}/>
           <Header />
-          <Hero/>
+          <Hero openChat={handleOpenChat}/>
           <Services/>
           <Portfolio/>
           <Boast/>
