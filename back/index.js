@@ -1,35 +1,27 @@
-require("dotenv").config();
-const express = require("express");
-const { MongoClient } = require("mongodb");
+require('dotenv').config()
 
-const db = new MongoClient(process.env.DB);
-// console.log(MongoClient.toString());
-db.connect()
-db.close()
+const {createServer} = require('https');
+const connect = require('connect')
+
+const ssl = require('./assets/ssl')
 
 class Server {
-  constructor() {
-    this.demon = null;
-    this.PORT = process.env.PORT;
+  constructor(){
+    this.app = null
+    this.server = null
+    this.socket = null
   }
-  initDemon() {
-    this.demon = express();
+  initApp(){
+
   }
-  initMiddlewares() {
-    this.demon.use(express.json());
+  initServer(){
+    
   }
-  initRoutes() {
-    this.demon.use("/", express.static("/"));
-  }
-  runServre() {
-    this.initDemon();
-    this.initMiddlewares();
-    this.initRoutes();
-    this.demon.listen(this.PORT, () =>
-      console.log("server is running on port 8080")
-    );
-  }
+
+
+
+
+
+
 }
 
-// new Server().runServre()
-// ==================================
