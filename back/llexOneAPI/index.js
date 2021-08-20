@@ -1,5 +1,6 @@
 const express = require('express')
 
+
 class App {
   constructor(){
     this.app = null
@@ -10,7 +11,7 @@ class App {
   initMiddlewares(){
   }
   initRoutes(){
-    // this.app.use(express.static('../'));
+    this.app.use(express.static(__dirname+'../'));
   }
   run(){
     this.initApp()

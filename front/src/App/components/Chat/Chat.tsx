@@ -16,14 +16,6 @@ function Chat({ /* isOpenChat, */ openChat }: Props) {
 
   function modalMoveProcessing(event:any):void {
     let modal:any = document.querySelector('#modal')
-    console.dir(modal);
-    console.log(event.movementX);
-    console.log(event.movementY);
-    
-  
-    // 640*480
-    // offsetTop: 255
-    // offsetLeft: 720
     changeStyle({top: `${modal.offsetTop+event.movementY}px`, left: `${modal.offsetLeft+event.movementX}px`})
   }
 
@@ -53,18 +45,14 @@ function Chat({ /* isOpenChat, */ openChat }: Props) {
           <div className={styles.chatModal} id="modal" style={modalStyle}>
 
             <div className={styles.chatModal__title} onMouseDown={modalMoveStart}>
-              modal window
+              Using Telegram API
               <span className={styles.chatModal__title__close} onClick={() => {
                 openChat(false)
                 console.log('tets');
               }}></span>
             </div>
 
-
-
             <div className={styles.chatModal_field}>
-
-
 
             </div>
           </div>

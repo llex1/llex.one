@@ -163,8 +163,11 @@
       width: 40rem;
       height: 30rem;
       transform: translate(-50%, -50%);
-      border: 1px solid dodgerblue;
+      border: 1px solid #444655;
       border-radius: 0.5rem;
+      box-shadow: 
+        2px 10px 15px -3px rgba(121, 121, 121, 0.5),
+        0 4px 6px -2px rgba(121, 121, 121, 0.2);
       resize: both;
       overflow: scroll;
       .chatModal__title{
@@ -175,7 +178,8 @@
         justify-content: space-between;
         border-top-left-radius: 0.5rem;
         border-top-right-radius: 0.5rem;
-        background-color: goldenrod;
+        background-color: #444655;
+        color: ghostwhite;
       }
       .chatModal__title__close{
         display: block;
@@ -189,7 +193,7 @@
           display: inline-block;
           width: 1.5rem;
           height: 2px;
-          background-color: black;
+          background-color: ghostwhite;
           border-radius: 2px;
           position: absolute;
           top: 1rem;
@@ -201,7 +205,7 @@
           display: inline-block;
           width: 1.5rem;
           height: 2px;
-          background-color: black;
+          background-color: ghostwhite;
           border-radius: 2px;
           position: absolute;
           top: 1rem;
@@ -213,14 +217,9 @@
         height: calc(100% - 3rem);
         border-bottom-left-radius: 0.5rem;
         border-bottom-right-radius: 0.5rem;
-        background-color: ghostwhite;
+        background-color: rgba(255, 255, 255, .15);
+        backdrop-filter: blur(10px);
       }
-
-
-
-
-
-
 
     }
   }

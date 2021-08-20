@@ -4,11 +4,11 @@ const { createServer } = require("https");
 const connect = require("connect");
 const cors = require("cors");
 const vhost = require("vhost");
-
+  
 const ssl = require("./assets/ssl");
 
-const App_llexOne = require('./llexOne')
-const App_llexOne_API = require('./llexOneAPI')
+const AppllexOne = require('./llexOne')
+const AppllexOneAPI = require('./llexOneAPI')
 
 
 
@@ -32,17 +32,16 @@ class Server {
         origin: "*",
       })
     );
-    this.app.use(vhost('llex.one',App_llexOne));
+    this.app.use(vhost('llex.one',AppllexOne));
+    this.app.use(vhost('api.llex.one',AppllexOneAPI));
   }
   runServer(){
     this.initApp()
     this.initServer()
     this.initMiddlewares()
     this.server.listen(process.env.PORT || '8080', ()=>{
-      console.log('server is running');
+      console.log('server is running on port ',process.env.PORT );
     })
   }
 }
-
-
 new Server().runServer()
