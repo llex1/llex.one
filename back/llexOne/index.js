@@ -12,6 +12,9 @@ class App {
   }
   initRoutes(){
     this.app.use(express.static(__dirname+'../'));
+    this.app.use((req, res, next)=>{
+      res.send('<h1>llex one Hello</h1>')
+    });
   }
   run(){
     this.initApp()
