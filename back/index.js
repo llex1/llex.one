@@ -5,7 +5,7 @@ const connect = require("connect");
 const cors = require("cors");
 const vhost = require("vhost");
 
-const ssl = require("./assets/ssl");
+const {llexOne, apillexOne} = require("./assets/ssl");
 
 // const AppllexOne = require('./llexOne')
 // const AppllexOneAPI = require('./llexOneAPI')
@@ -59,12 +59,21 @@ const app = connect();
 // });
 
 app.use(vhost('localhost', (req, res, next) => {
-  console.log("herer");
+  console.log("MAIN");
   // res.send('<h1>llex.one greeting You</h1>')
   res.end("<h1>llex.one greeting You here</h1>");
   next();
 }))
+app.use(vhost('api.localhost', (req, res, next) => {
+  console.log("API");
+  // res.send('<h1>llex.one greeting You</h1>')
+  res.end("<h1>API.llex.one greeting You here</h1>");
+  next();
+}))
 
-createServer(ssl.llexOne, app).listen("8080", () => {
+const server = createServer({}, app)
+server.addContext('localhost', llexOne)
+server.addContext('api.localhost', apillexOne)
+server.listen("8080", () => {
   console.log("run on port 8080");
 });

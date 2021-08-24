@@ -2,15 +2,15 @@ const {readFileSync} = require('fs')
 
 const llexOne = {
   key : readFileSync(__dirname+`${process.env.LLEXONE_KEYPATH}`),
-  cert : readFileSync(__dirname+`${process.env.LLEXONE_SERTPATH}`)
+  cert : readFileSync(__dirname+`${process.env.LLEXONE_CERTPATH}`)
 }
-// console.log(__dirname+ '../mkcert/localhost-key.pem');
-// const apiLlexOne = {
-//   key : readFileSync(`${process.env.API_LLEXONE_KEYPATH}`),
-//   cert : readFileSync(`${process.env.API_LLEXONE_SERTPATH}`)
-// }
+const apillexOne = {
+  key : readFileSync(__dirname+`${process.env.API_LLEXONE_KEYPATH}`),
+  cert : readFileSync(__dirname+`${process.env.API_LLEXONE_CERTPATH}`)
+}
+
 
 module.exports = {
   llexOne,
-  // apiLlexOne
+  apillexOne
 }
