@@ -1,16 +1,14 @@
 require("dotenv").config();
 
-// const { createServer } = require("https");
-const http = require("https");
+const { createServer } = require("https");
 const connect = require("connect");
 const cors = require("cors");
 const vhost = require("vhost");
-  
+
 const ssl = require("./assets/ssl");
 
-const AppllexOne = require('./llexOne')
-const AppllexOneAPI = require('./llexOneAPI')
-
+// const AppllexOne = require('./llexOne')
+// const AppllexOneAPI = require('./llexOneAPI')
 
 // class Server {
 //   constructor() {
@@ -46,29 +44,27 @@ const AppllexOneAPI = require('./llexOneAPI')
 // }
 // new Server().runServer()
 
-
-
-
-const test = '==================================================='
-
-http.createServer(ssl.llexOne, function (req, res) {
-  res.writeHead(200);
-  res.end("hello world\n");
-}).listen('8000');
-
-
-//===========================================================
-
-
-// const specifirdPORT = '443'
-// const handler = (req,res, next)=>{
-//   console.log('handler');
-// }
-// const cb = (...args) =>{
-//   console.log('serve is listening port ', specifirdPORT);
-//   console.dir({args});
-//   console.log(args.length);
+// const options = {
+//   key: readFileSync('./mkcert/localhost-key.pem'),
+//   cert: readFileSync('./mkcert/localhost.pem')
 // }
 
-// const server = http.createServer(handler).listen(specifirdPORT,cb )
-// console.log(server);
+const app = connect();
+
+// app.use((req, res, next) => {
+//   console.log("herer");
+//   // res.send('<h1>llex.one greeting You</h1>')
+//   res.end("<h1>llex.one greeting You here</h1>");
+//   next();
+// });
+
+app.use(vhost('localhost', (req, res, next) => {
+  console.log("herer");
+  // res.send('<h1>llex.one greeting You</h1>')
+  res.end("<h1>llex.one greeting You here</h1>");
+  next();
+}))
+
+createServer(ssl.llexOne, app).listen("8080", () => {
+  console.log("run on port 8080");
+});
