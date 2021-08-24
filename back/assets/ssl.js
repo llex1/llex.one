@@ -1,16 +1,16 @@
 const {readFileSync} = require('fs')
 
-const llexOne = {
-  key : readFileSync(__dirname+`${process.env.LLEXONE_KEYPATH}`),
-  cert : readFileSync(__dirname+`${process.env.LLEXONE_CERTPATH}`)
+const rootDomainSSL = {
+  key : readFileSync(__dirname+`${process.env.rootDomainSSL_k}`),
+  cert : readFileSync(__dirname+`${process.env.rootDomainSSL_c}`)
 }
-const apillexOne = {
-  key : readFileSync(__dirname+`${process.env.API_LLEXONE_KEYPATH}`),
-  cert : readFileSync(__dirname+`${process.env.API_LLEXONE_CERTPATH}`)
+const sub_Domain1SSL = {
+  key : readFileSync(__dirname+`${process.env.sub_Domain1SSL_k}`),
+  cert : readFileSync(__dirname+`${process.env.sub_Domain1SSL_c}`)
 }
 
 
 module.exports = {
-  llexOne,
-  apillexOne
+  rootDomainSSL,
+  sub_Domain1SSL
 }

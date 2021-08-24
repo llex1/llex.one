@@ -11,7 +11,10 @@ class App {
   initMiddlewares(){
   }
   initRoutes(){
-    this.app.use(express.static(__dirname+'../'));
+    this.app.use((req, res, next)=>{
+      res.send('<h1>Sub Domain one !!</h1>')
+      next()
+    });
   }
   run(){
     this.initApp()

@@ -2,78 +2,46 @@ require("dotenv").config();
 
 const { createServer } = require("https");
 const connect = require("connect");
-const cors = require("cors");
 const vhost = require("vhost");
 
-const {llexOne, apillexOne} = require("./assets/ssl");
+const cors = require("cors");
 
-// const AppllexOne = require('./llexOne')
-// const AppllexOneAPI = require('./llexOneAPI')
+const rootDomainApp = require('./rootDomain');
+const sub_Domain1App = require('./subDomain1');
 
-// class Server {
-//   constructor() {
-//     this.app = null;
-//     this.server = null;
-//     this.socket = null;
-//   }
-//   initApp() {
-//     this.app = connect();
-//   }
-//   initServer() {
-//     this.server = createServer(this.app);
-//     this.server.addContext("llex.one", ssl.llexOne);
-//     this.server.addContext("api.llex.one", ssl.apiLlexOne);
-//   }
-//   initMiddlewares() {
-//     this.app.use(
-//       cors({
-//         origin: "*",
-//       })
-//     );
-//     this.app.use(vhost('llex.one',AppllexOne));
-//     this.app.use(vhost('api.llex.one',AppllexOneAPI));
-//   }
-//   runServer(){
-//     this.initApp()
-//     this.initServer()
-//     this.initMiddlewares()
-//     this.server.listen(process.env.PORT || '8080', ()=>{
-//       console.log('server is running on port ',process.env.PORT );
-//     })
-//   }
-// }
-// new Server().runServer()
+const {rootDomainSSL, sub_Domain1SSL} = require("./assets/ssl");
 
-// const options = {
-//   key: readFileSync('./mkcert/localhost-key.pem'),
-//   cert: readFileSync('./mkcert/localhost.pem')
-// }
 
-const app = connect();
-
-// app.use((req, res, next) => {
-//   console.log("herer");
-//   // res.send('<h1>llex.one greeting You</h1>')
-//   res.end("<h1>llex.one greeting You here</h1>");
-//   next();
-// });
-
-app.use(vhost('localhost', (req, res, next) => {
-  console.log("MAIN");
-  // res.send('<h1>llex.one greeting You</h1>')
-  res.end("<h1>llex.one greeting You here</h1>");
-  next();
-}))
-app.use(vhost('api.localhost', (req, res, next) => {
-  console.log("API");
-  // res.send('<h1>llex.one greeting You</h1>')
-  res.end("<h1>API.llex.one greeting You here</h1>");
-  next();
-}))
-
-const server = createServer({}, app)
-server.addContext('localhost', llexOne)
-server.addContext('api.localhost', apillexOne)
-server.listen("8080", () => {
-  console.log("run on port 8080");
-});
+class Server {
+  constructor() {
+    this.app = null;
+    this.server = null;
+    this.socket = null;
+  }
+  initApp() {
+    this.app = connect();
+  }
+  initServer() {
+    this.server = createServer(this.app);
+    this.server.addContext(`${process.env.rootDomainName}`, rootDomainSSL);
+    this.server.addContext(`${process.env.sub_Domain1Name}`, sub_Domain1SSL);
+  }
+  initMiddlewares() {
+    this.app.use(
+      cors({
+        origin: "*",
+      })
+    );
+    this.app.use(vhost(`${process.env.rootDomainName}`,rootDomainApp));
+    this.app.use(vhost(`${process.env.sub_Domain1Name}`,sub_Domain1App));
+  }
+  runServer(){
+    this.initApp()
+    this.initServer()
+    this.initMiddlewares()
+    this.server.listen(process.env.PORT || '8080', ()=>{
+      console.log('server is running on port ',process.env.PORT );
+    })
+  }
+}
+new Server().runServer()
