@@ -1,15 +1,14 @@
 require("dotenv").config();
-
 const { createServer } = require("https");
 const connect = require("connect");
 const vhost = require("vhost");
-
 const cors = require("cors");
+const io = require('socket.io');
 
 const rootDomainApp = require('./rootDomain');
 const sub_Domain1App = require('./subDomain1');
-
 const {rootDomainSSL, sub_Domain1SSL} = require("./assets/ssl");
+const socketHub = require('./socket')
 
 
 class Server {
@@ -26,6 +25,11 @@ class Server {
     this.server.addContext(`${process.env.rootDomainName}`, rootDomainSSL);
     this.server.addContext(`${process.env.sub_Domain1Name}`, sub_Domain1SSL);
   }
+  initSocket(){
+    this.socket = io(this.server);
+    socketHub(this.socket);
+
+  }
   initMiddlewares() {
     this.app.use(
       cors({
@@ -38,6 +42,7 @@ class Server {
   runServer(){
     this.initApp()
     this.initServer()
+    this.initSocket()
     this.initMiddlewares()
     this.server.listen(process.env.PORT || '8080', ()=>{
       console.log('server is running on port ',process.env.PORT );

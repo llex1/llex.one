@@ -9,7 +9,6 @@ const sub_Domain1SSL = {
   cert : readFileSync(__dirname+`${process.env.sub_Domain1SSL_c}`)
 }
 
-
 module.exports = {
   rootDomainSSL,
   sub_Domain1SSL
