@@ -1,20 +1,14 @@
-// function socketHub(socket) {
-//   socket.on("connect", (client) => {
-//     console.log(client.id);
-//   });
-// }
+const io = require('socket.io');
 
-class SocketHub{
+class Socket{
   constructor(){
     this.socket = null
   }
-  initSochet(arg){
-    this.socket = arg
-  }
-  runSocket(){
 
+  run(){
+    this.socket(arg)
   }
 }
 
 
-module.exports = socketHub;
+module.exports = new Socket();

@@ -3,19 +3,18 @@ const { createServer } = require("https");
 const connect = require("connect");
 const vhost = require("vhost");
 const cors = require("cors");
-const io = require('socket.io');
 
 const rootDomainApp = require('./rootDomain');
 const sub_Domain1App = require('./subDomain1');
 const {rootDomainSSL, sub_Domain1SSL} = require("./assets/ssl");
-const socketHub = require('./socket')
+const Socket = require('./socket')
 
 
 class Server {
   constructor() {
     this.app = null;
     this.server = null;
-    this.socket = null;
+    this.enhance = null;
   }
   initApp() {
     this.app = connect();
@@ -26,8 +25,7 @@ class Server {
     this.server.addContext(`${process.env.sub_Domain1Name}`, sub_Domain1SSL);
   }
   initSocket(){
-    this.socket = io(this.server);
-    socketHub(this.socket);
+    Socket(this.server)
 
   }
   initMiddlewares() {
