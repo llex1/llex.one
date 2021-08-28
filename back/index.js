@@ -4,11 +4,10 @@ const connect = require("connect");
 const vhost = require("vhost");
 const cors = require("cors");
 
-const rootDomainApp = require('./rootDomain');
-const sub_Domain1App = require('./subDomain1');
-const {rootDomainSSL, sub_Domain1SSL} = require("./assets/ssl");
-const Socket = require('./socket')
-
+const { rootDomainSSL, sub_Domain1SSL } = require("./assets/ssl");
+const rootDomainApp = require("./rootDomain");
+const sub_Domain1App = require("./subDomain1");
+const Socket = require("./socket");
 
 class Server {
   constructor() {
@@ -24,9 +23,9 @@ class Server {
     this.server.addContext(`${process.env.rootDomainName}`, rootDomainSSL);
     this.server.addContext(`${process.env.sub_Domain1Name}`, sub_Domain1SSL);
   }
-  initSocket(){
-    Socket(this.server)
-
+  initSocket() {
+    this.enhance = new Socket(this.server);
+    this.enhance.run();
   }
   initMiddlewares() {
     this.app.use(
@@ -34,17 +33,17 @@ class Server {
         origin: "*",
       })
     );
-    this.app.use(vhost(`${process.env.rootDomainName}`,rootDomainApp));
-    this.app.use(vhost(`${process.env.sub_Domain1Name}`,sub_Domain1App));
+    this.app.use(vhost(`${process.env.rootDomainName}`, rootDomainApp));
+    this.app.use(vhost(`${process.env.sub_Domain1Name}`, sub_Domain1App));
   }
-  runServer(){
-    this.initApp()
-    this.initServer()
-    this.initSocket()
-    this.initMiddlewares()
-    this.server.listen(process.env.PORT || '8080', ()=>{
-      console.log('server is running on port ',process.env.PORT );
-    })
+  runServer() {
+    this.initApp();
+    this.initServer();
+    this.initSocket();
+    this.initMiddlewares();
+    this.server.listen(process.env.PORT || "8080", () => {
+      console.log("server is running on port ", process.env.PORT);
+    });
   }
 }
-new Server().runServer()
+new Server().runServer();

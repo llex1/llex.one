@@ -1,14 +1,15 @@
-const io = require('socket.io');
+const io = require("socket.io");
 
-class Socket{
-  constructor(){
-    this.socket = null
+class Socket {
+  constructor(server) {
+    this.socket = io(server);
   }
-
-  run(){
-    this.socket(arg)
+  run() {
+    this.socket.on("connect", this.controller);
+  }
+  controller(client) {
+    console.log(client.id);
   }
 }
 
-
-module.exports = new Socket();
+module.exports = Socket;
