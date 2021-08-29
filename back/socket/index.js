@@ -4,11 +4,24 @@ class Socket {
   constructor(server) {
     this.socket = io(server);
   }
-  run() {
-    this.socket.on("connect", this.controller);
+
+
+
+  rootController() {
+    this.socket.on("connect", this.clientController);
   }
-  controller(client) {
+
+
+
+  clientController(client) {
+    client.on('disconnect', ()=>{
+      console.log('bay');
+    })
     console.log(client.id);
+  }
+
+  run() {
+    this.rootController();
   }
 }
 

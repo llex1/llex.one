@@ -23,7 +23,7 @@ class Server {
     this.server.addContext(`${process.env.rootDomainName}`, rootDomainSSL);
     this.server.addContext(`${process.env.sub_Domain1Name}`, sub_Domain1SSL);
   }
-  initSocket() {
+  initEnhance() {
     this.enhance = new Socket(this.server);
     this.enhance.run();
   }
@@ -36,14 +36,14 @@ class Server {
     this.app.use(vhost(`${process.env.rootDomainName}`, rootDomainApp));
     this.app.use(vhost(`${process.env.sub_Domain1Name}`, sub_Domain1App));
   }
-  runServer() {
+  run() {
     this.initApp();
     this.initServer();
-    this.initSocket();
+    this.initEnhance();
     this.initMiddlewares();
     this.server.listen(process.env.PORT || "8080", () => {
       console.log("server is running on port ", process.env.PORT);
     });
   }
 }
-new Server().runServer();
+new Server().run();
