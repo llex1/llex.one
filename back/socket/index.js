@@ -5,18 +5,14 @@ class Socket {
     this.socket = io(server);
   }
 
-
-
   rootController() {
     this.socket.on("connect", this.clientController);
   }
 
-
-
   clientController(client) {
-    client.on('disconnect', ()=>{
-      console.log('bay');
-    })
+    // client.on("disconnect", () => {
+    //   console.log("bay");
+    // });
     console.log(client.id);
   }
 
