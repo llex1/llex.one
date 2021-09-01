@@ -1,4 +1,5 @@
 const express = require("express");
+const mongodb = require('mongodb')
 
 class App {
   constructor() {
@@ -7,7 +8,9 @@ class App {
   initApp() {
     this.app = express();
   }
-  initMiddlewares() {}
+  initMiddlewares() {
+    this.app.use(express.json())
+  }
   initRoutes() {
     this.app.use((req, res, next) => {
       res.send("<h1>Sub Domain one !!</h1>");

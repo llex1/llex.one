@@ -4,9 +4,9 @@ const connect = require("connect");
 const vhost = require("vhost");
 const cors = require("cors");
 
-const { rootDomainSSL, sub_Domain1SSL } = require("./assets/ssl");
-const rootDomainApp = require("./rootDomain");
-const sub_Domain1App = require("./subDomain1");
+const { sslRootDomain, sslSub1Domain } = require("./assets/ssl");
+const appRootDomain = require("./Domain");
+const appSub1Domain = require("./Domain.api");
 const Socket = require("./socket");
 
 class Server {
@@ -20,8 +20,8 @@ class Server {
   }
   initServer() {
     this.server = createServer(this.app);
-    this.server.addContext(`${process.env.rootDomainName}`, rootDomainSSL);
-    this.server.addContext(`${process.env.sub_Domain1Name}`, sub_Domain1SSL);
+    this.server.addContext(`${process.env.rootDomainName}`, sslRootDomain);
+    this.server.addContext(`${process.env.sub1DomainName}`, sslSub1Domain);
   }
   initEnhance() {
     this.enhance = new Socket(this.server);
@@ -33,8 +33,8 @@ class Server {
         origin: "*",
       })
     );
-    this.app.use(vhost(`${process.env.rootDomainName}`, rootDomainApp));
-    this.app.use(vhost(`${process.env.sub_Domain1Name}`, sub_Domain1App));
+    this.app.use(vhost(`${process.env.rootDomainName}`, appRootDomain));
+    this.app.use(vhost(`${process.env.sub1DomainName}`, appSub1Domain));
   }
   run() {
     this.initApp();

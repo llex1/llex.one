@@ -1,15 +1,15 @@
 const {readFileSync} = require('fs')
 
-const rootDomainSSL = {
-  key : readFileSync(__dirname+`${process.env.rootDomainSSL_k}`),
-  cert : readFileSync(__dirname+`${process.env.rootDomainSSL_c}`)
+const sslRootDomain = {
+  key : readFileSync(__dirname+`${process.env.sslRootDomain_k}`),
+  cert : readFileSync(__dirname+`${process.env.sslRootDomain_c}`)
 }
-const sub_Domain1SSL = {
-  key : readFileSync(__dirname+`${process.env.sub_Domain1SSL_k}`),
-  cert : readFileSync(__dirname+`${process.env.sub_Domain1SSL_c}`)
+const sslSub1Domain = {
+  key : readFileSync(__dirname+`${process.env.sslSub1Domain_k}`),
+  cert : readFileSync(__dirname+`${process.env.sslSub1Domain_c}`)
 }
 
 module.exports = {
-  rootDomainSSL,
-  sub_Domain1SSL
+  sslRootDomain,
+  sslSub1Domain
 }
