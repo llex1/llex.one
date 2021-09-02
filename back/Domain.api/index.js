@@ -1,5 +1,6 @@
 const express = require("express");
-const mongodb = require('mongodb')
+
+const authRouter = require('./auth/auth.router');
 
 class App {
   constructor() {
@@ -12,10 +13,7 @@ class App {
     this.app.use(express.json())
   }
   initRoutes() {
-    this.app.use((req, res, next) => {
-      res.send("<h1>Sub Domain one !!</h1>");
-      next();
-    });
+    this.app.use('/auth', authRouter)
   }
   run() {
     this.initApp();
