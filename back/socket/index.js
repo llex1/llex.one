@@ -10,9 +10,6 @@ class Socket {
   }
 
   clientController(client) {
-    // client.on("disconnect", () => {
-    //   console.log("bay");
-    // });
     console.log(client.id);
   }
 
