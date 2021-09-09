@@ -27,6 +27,7 @@ class Server {
     this.enhance = new Socket(this.server);
     this.enhance.run();
   }
+  
   initMiddlewares() {
     this.app.use(
       cors({
