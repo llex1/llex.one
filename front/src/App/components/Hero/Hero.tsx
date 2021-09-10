@@ -33,7 +33,7 @@ function Hero(prop:{openChat:(value:boolean) => void}) {
           <img className={styles.heroImg} src={heroImg} alt="The boy is at the computer." />
         </picture>
 
-        <svg className={`${styles.wave} ${styles.wavePink}`} width="62px">
+        {/* <svg className={`${styles.wave} ${styles.wavePink}`} width="62px">
           <use href={`${icons}#wave`}></use>
         </svg>
         <svg className={`${styles.wave} ${styles.waveGreen}`} width="48px">
@@ -41,13 +41,13 @@ function Hero(prop:{openChat:(value:boolean) => void}) {
         </svg>
         <svg className={`${styles.wave} ${styles.waveWhite}`} width="48px">
           <use href={`${icons}#wave`}></use>
-        </svg>
-
+        </svg> */}
+{/* 
 
         <span className={`${styles.circle} ${styles.circleOne}`}></span>
         <span className={`${styles.circle} ${styles.circleTwo}`}></span>
         <span className={`${styles.circle} ${styles.circleThrie}`}></span>
-        <span className={`${styles.circle} ${styles.circleFour}`}></span>
+        <span className={`${styles.circle} ${styles.circleFour}`}></span> */}
         {/* <span className={`${styles.cros} ${styles.crosOne}`}></span> */}
         <span className={`${styles.cros} ${styles.crosTwo}`}></span>
 
