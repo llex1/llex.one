@@ -27,11 +27,11 @@ function Hero(prop:{openChat:(value:boolean) => void}) {
           <use href={`${icons}#polygon2`}></use>
         </svg>
 
-        <picture>
+        {/* <picture> */}
           {/* <source srcset="./images/......webp 1x, ./images/.....@2x.webp 2x" media="(min-width: 1440px)" type="image/webp"> */}
-          <source srcSet={`${heroImg} 1x, ${heroImg2x} 2x`} media="(min-width: 1280px)" />
+          {/* <source srcSet={`${heroImg} 1x, ${heroImg2x} 2x`} media="(min-width: 1280px)" />
           <img className={styles.heroImg} src={heroImg} alt="The boy is at the computer." />
-        </picture>
+        </picture> */}
 
         {/* <svg className={`${styles.wave} ${styles.wavePink}`} width="62px">
           <use href={`${icons}#wave`}></use>
