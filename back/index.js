@@ -9,6 +9,10 @@ const appRootDomain = require("./Domain");
 const appSub1Domain = require("./Domain.api");
 const Socket = require("./socket");
 
+//dev dependency module
+const morgan = require('morgan').token('servername', (req)=> req.client.servername);
+
+
 class Server {
   constructor() {
     this.app = null;
@@ -29,6 +33,9 @@ class Server {
   }
   
   initMiddlewares() {
+    //dev dependency
+    this.app.use(morgan(':method :servername:url  - :status :response-time ms'))
+    //dev dependency __END__
     this.app.use(
       cors({
         origin: "*",

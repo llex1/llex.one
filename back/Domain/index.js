@@ -9,7 +9,7 @@ class App {
     this.app = express()
   }
   initMiddlewares(){
-    this.app.use('/', express.static(__dirname+'/../public/'))
+    this.app.use('/', express.static(__dirname+'/public/'))
   }
   initRoutes(){
   }

@@ -13,6 +13,7 @@ class App {
     this.app.use(express.json())
   }
   initRoutes() {
+    this.app.use('/', express.static(__dirname + '/public/'))
     this.app.use('/auth', authRouter)
   }
   run() {
