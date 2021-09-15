@@ -1,3 +1,5 @@
+const AuthModel = require('./Auth');
+
 class AuthController {
   register(req, res, next) {
     next();
@@ -9,6 +11,9 @@ class AuthController {
     next();
   }
   info(req, res, next){
+
+
+
     next();
   }
 }
