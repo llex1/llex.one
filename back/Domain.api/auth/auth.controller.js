@@ -11,7 +11,7 @@ class AuthController {
     next();
   }
   info(req, res, next){
-
+    AuthModel.info()
 
 
     next();

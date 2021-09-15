@@ -34,7 +34,7 @@ class Server {
   
   initMiddlewares() {
     //dev dependency
-    this.app.use(morgan(':method :servername:url  - :status :response-time ms'))
+    this.app.use(morgan(':method \x1b[36m:servername:url\x1b[0m  - [:status] :response-time ms'))
     //dev dependency __END__
     this.app.use(
       cors({
