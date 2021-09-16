@@ -4,29 +4,31 @@ const {MongoClient} = require('mongodb')
 class Driver {
 
   client = new MongoClient(process.env.MONGO);
-  db = null;
   idDisconnectDelay = null;
 
-  async connect(dbName){
-    if(!dbName){
-      await this.client.connect()
-      return this.client
-    }
-    if(dbName && typeof dbName  === 'string'){
-      await this.client.connect()
-      this.db = await this.client.db(dbName)
-      return this.db
-    }
-  }
+  connect = async (dbName) => (collectionName) => () =>{
+    this.client.on('open', ()=>{console.log('OPEN')})
+    this.client.on('close', ()=>{console.log('CLOSE')})
+    // await this.client.connect()
+    return this.client
+}
 
-
-
-
-
-  
+  // async connect(){
+  //     this.client.on('open', ()=>{console.log('OPEN')})
+  //     this.client.on('close', ()=>{console.log('CLOSE')})
+  //     await this.client.connect()
+  //     return this.client
+  // }
   disconnect(){ 
-    this.client.disconnect()
+    this.client.close()
   }
+  autoDisconnect(){
+
+  }
+
+
+
+
 
 }
 
