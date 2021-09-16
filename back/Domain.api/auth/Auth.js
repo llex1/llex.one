@@ -1,27 +1,27 @@
-const {MongoClient} = require('mongodb');
+const MongoDriver = require('../helpers/mongoDriver')
 
 class Auth {
   constructor(){
 
   }
   async info(){
-    const client = new MongoClient(process.env.MONGO)
-    await client.connect()
-    await client.db('kapusta')
-    console.log(client.topology?.s?.state);
-    console.log('-=================================');
-    await client.close()
-    console.log(client.topology?.s?.state);
-    console.log('-=================================');
+    const db = await MongoDriver.connect('llex1')
+    console.log(db);
+
 
 
 
   }
-
-
-
-
-
-
+  
+  
+  
+  
+  
+  
 }
 module.exports = new Auth()
+
+
+
+
+// console.log(client.topology?.s?.state);
