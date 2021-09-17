@@ -1,4 +1,4 @@
-const AuthModel = require('./Auth');
+const AuthModel = require("./Auth");
 
 class AuthController {
   register(req, res, next) {
@@ -10,9 +10,8 @@ class AuthController {
   logout(req, res, next) {
     next();
   }
-  info(req, res, next){
-    AuthModel.info()
-
+  info(req, res, next) {
+    AuthModel.info();
 
     next();
   }

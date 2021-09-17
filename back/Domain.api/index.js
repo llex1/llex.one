@@ -2,6 +2,28 @@ const express = require("express");
 
 const authRouter = require('./auth/auth.router');
 
+const readline = require("readline");
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+  terminal: false
+
+});
+// rl.on('line', async (input)=>{
+//   console.log(process.MDB?.topology?.s?.state);
+//   await process.MDB.close()
+//   console.log('----- close from Mongo');
+//   console.log(process.MDB?.topology?.s?.state);
+// })
+rl.on('line', async (input)=>{
+    console.log(input === "1");
+    console.log(process.MDB?.topology?.s?.state);
+    await process.MDB.close()
+    console.log('----- close from Mongo');
+    console.log(process.MDB?.topology?.s?.state);
+  
+})
+
 class App {
   constructor() {
     this.app = null;
