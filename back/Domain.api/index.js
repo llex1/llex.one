@@ -15,14 +15,14 @@ const rl = readline.createInterface({
 //   console.log('----- close from Mongo');
 //   console.log(process.MDB?.topology?.s?.state);
 // })
-rl.on('line', async (input)=>{
-    console.log(input === "1");
-    console.log(process.MDB?.topology?.s?.state);
-    await process.MDB.close()
-    console.log('----- close from Mongo');
-    console.log(process.MDB?.topology?.s?.state);
+// rl.on('line', async (input)=>{
+//     console.log(input === "1");
+//     console.log(process.MDB?.topology?.s?.state);
+//     await process.MDB.close()
+//     console.log('----- close from Mongo');
+//     console.log(process.MDB?.topology?.s?.state);
   
-})
+// })
 
 class App {
   constructor() {
