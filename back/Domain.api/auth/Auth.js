@@ -1,5 +1,3 @@
-const MongoDriver = require('../helpers/mongoDriver')
-
 class Auth {
   constructor(){
 
@@ -7,13 +5,8 @@ class Auth {
   async login(){
 
   }
-  async info(){
-    MongoDriver.run()
-
-
-
-
-
+  info(){
+    console.log('---- from AUTH ');
 
   }
   

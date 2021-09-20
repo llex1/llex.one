@@ -1,14 +1,16 @@
 const express = require("express");
+const MongoDriver = require('./helpers/mongoDriver');
+
 
 const authRouter = require('./auth/auth.router');
 
-const readline = require("readline");
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-  terminal: false
+// const readline = require("readline");
+// const rl = readline.createInterface({
+//   input: process.stdin,
+//   output: process.stdout,
+//   terminal: false
 
-});
+// });
 // rl.on('line', async (input)=>{
 //   console.log(process.MDB?.topology?.s?.state);
 //   await process.MDB.close()
@@ -17,11 +19,11 @@ const rl = readline.createInterface({
 // })
 // rl.on('line', async (input)=>{
 //     console.log(input === "1");
-//     console.log(process.MDB?.topology?.s?.state);
-//     await process.MDB.close()
-//     console.log('----- close from Mongo');
-//     console.log(process.MDB?.topology?.s?.state);
-  
+//     process.exit()
+    // console.log(process.MDB?.topology?.s?.state);
+    // await process.MDB.close()
+    // console.log('----- close from Mongo');
+    // console.log(process.MDB?.topology?.s?.state);
 // })
 
 class App {
@@ -30,6 +32,9 @@ class App {
   }
   initApp() {
     this.app = express();
+  }
+  initDB(){
+    this.app.locals.db = MongoDriver.run()
   }
   initMiddlewares() {
     this.app.use(express.json())
@@ -40,6 +45,7 @@ class App {
   }
   run() {
     this.initApp();
+    this.initDB()
     this.initMiddlewares();
     this.initRoutes();
     return this.app;
