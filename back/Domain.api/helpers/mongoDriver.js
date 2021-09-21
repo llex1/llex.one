@@ -1,5 +1,4 @@
 const { MongoClient, TopologyDescriptionChangedEvent } = require("mongodb");
-const { rawListeners } = require("..");
 
 class mongoController {
   #poolSize = 5;
@@ -14,29 +13,35 @@ class mongoController {
 
   async run(ctx) {
     this.#context = ctx;
-    await this.client.connect();
+    if(await this.connect()){
+      return this.db;
+    }
+    if(!await this.connect()){
+      //спробувати презапуск
+      console.log("\x1b[34m Next connection attempt in 15 s \x1b[30m");
+    }
+  }
+
+  async connect() {
     try {
+      await this.client.connect();
       this.db = this.client.db(process.env.DB1);
       (await this.db.command({ ping: 1 })).ok === 1
         ? console.log("[\x1b[32m OK \x1b[30m] db connection")
-        : console.log("[\x1b[31m ERR \x1b[30m] db connection");
+        : console.log("[\x1b[31m ERR \x1b[30m] db connection /run.ping");
+      setTimeout(this.disconnect, 2000);
     } catch (err) {
-      console.log(err);
+      console.log("[\x1b[31m ERR \x1b[30m] db connection /run.catch ");
+      return false
     }
-    return this.db;
+    return true
   }
-
-
-  connect() {
-    console.log(this.app);
-  }
-
-
-
+  disconnect = () => {
+    this.client.close();
+  };
 
   watcher(req, res, next) {
-    // req.app.locals.db
-    console.log(req.app.locals.db.s.client.topology.s.state);
+    console.log(req.app.locals.db?.s?.client?.topology?.s?.state);
 
     next();
   }
