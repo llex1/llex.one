@@ -5,10 +5,9 @@ class Auth {
   async login(){
 
   }
-  info(req){
-    console.log('---- from AUTH ');
-    // req.app.locals.db.command({ping:1}).then((data)=>console.log(data))
-    // console.log(req, '<---------- REQ');
+  async info(req){
+    const result = await req.app.locals.db.collection('users').findOne({'"name"': "Alex"})
+    console.log(result);
 
   }
   

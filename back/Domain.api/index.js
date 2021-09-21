@@ -38,6 +38,7 @@ class App {
 
   async initDB() {
     this.app.locals.db = await MongoController.run(this);
+    console.log(this.app.locals.db.s.client.topology.s.state);
   }
 
   initMiddlewares() {

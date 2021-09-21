@@ -1,4 +1,5 @@
 const { MongoClient, TopologyDescriptionChangedEvent } = require("mongodb");
+const { rawListeners } = require("..");
 
 class mongoController {
   #poolSize = 5;
@@ -15,7 +16,7 @@ class mongoController {
     this.#context = ctx;
     await this.client.connect();
     try {
-      this.db = await this.client.db(process.env.DB1);
+      this.db = this.client.db(process.env.DB1);
       (await this.db.command({ ping: 1 })).ok === 1
         ? console.log("[\x1b[32m OK \x1b[30m] db connection")
         : console.log("[\x1b[31m ERR \x1b[30m] db connection");
@@ -32,9 +33,10 @@ class mongoController {
 
 
 
-  
+
   watcher(req, res, next) {
-    console.log(req.app.locals);
+    // req.app.locals.db
+    console.log(req.app.locals.db.s.client.topology.s.state);
 
     next();
   }
