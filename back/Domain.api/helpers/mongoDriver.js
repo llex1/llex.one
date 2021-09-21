@@ -1,35 +1,46 @@
-const {MongoClient} = require('mongodb')
+const { MongoClient, TopologyDescriptionChangedEvent } = require("mongodb");
 
+class mongoController {
+  #poolSize = 5;
+  #context = null;
+  db = null;
 
-class Driver {
-
-  client = new MongoClient(process.env.MONGO);
-  idDisconnectDelay = null;
-  counter = 0
-  db = ''
-
-
-  connect(){
-
-  }
-  disconnect(){
-
+  constructor() {
+    this.client = new MongoClient(process.env.MONGO, {
+      maxPoolSize: this.#poolSize,
+    });
   }
 
-
-
-
-
-  run(){
-    console.log('Run driver');
- 
+  async run(ctx) {
+    this.#context = ctx;
+    await this.client.connect();
+    try {
+      this.db = await this.client.db(process.env.DB1);
+      (await this.db.command({ ping: 1 })).ok === 1
+        ? console.log("[\x1b[32m OK \x1b[30m] db connection")
+        : console.log("[\x1b[31m ERR \x1b[30m] db connection");
+    } catch (err) {
+      console.log(err);
+    }
+    return this.db;
   }
 
+
+  connect() {
+    console.log(this.app);
+  }
+
+
+
+  
+  watcher(req, res, next) {
+    console.log(req.app.locals);
+
+    next();
+  }
 }
 
-module.exports = new Driver()
-
-
+module.exports = new mongoController();
 
 // process.on('SIGINT', (arg)=>{
 //   console.log('sigINT ========= <<<<< =======');

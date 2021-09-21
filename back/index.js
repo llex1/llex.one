@@ -50,7 +50,7 @@ class Server {
     this.initEnhance();
     this.initMiddlewares();
     this.server.listen(process.env.PORT || "8080", () => {
-      console.log("server is running on port ", process.env.PORT);
+      console.log("[\x1b[32m OK \x1b[30m] server running on port", process.env.PORT);
     });
   }
 }

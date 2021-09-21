@@ -5,8 +5,10 @@ class Auth {
   async login(){
 
   }
-  info(){
+  info(req){
     console.log('---- from AUTH ');
+    // req.app.locals.db.command({ping:1}).then((data)=>console.log(data))
+    // console.log(req, '<---------- REQ');
 
   }
   
