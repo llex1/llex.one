@@ -48,14 +48,22 @@ class mongoController {
 
   //Connection Recovery Service to DataBase
   crsDB = async () => {
-    let countOfTrying = 0;
-    let step = 5
+    let isFast = true;
+    let step = 3
     
     function sleep(ms = 5000) {
       return new Promise((res) => {
         setTimeout(res, ms);
       });
     };
+
+    function fast(){
+
+    }
+    function long(){
+
+    }
+
 
     console.log(`\x1b[34m Next connection attempt in ${step} s \x1b[30m`);
     
@@ -72,7 +80,11 @@ class mongoController {
         await sleep(step*1000);
       }
     }
-    console.log("crsDB DONE____ !");
+
+
+
+
+    console.log("=======  crsDB DONE  ====== !");
   };
 
   watcher(req, res, next) {
