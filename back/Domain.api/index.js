@@ -37,12 +37,12 @@ class App {
   }
 
   async initDB() {
-    this.app.locals.db = await MongoController.run(this);
+    this.app.locals.db = await MongoController.run();
     // console.log(this.app.locals.db.s.client.topology.s.state);
   }
 
   initMiddlewares() {
-    //Ukraine language:
+    //Ukrainian language:
     //MongoController - слідкує за підключенням до бази. 
     //Відключає з'єднання через 5хв після останнього запиту 
     //і перепідключається коли це необхідно.
