@@ -21,7 +21,6 @@ class MongoController {
       this.disconnect()
       process.exit()
     });
-    
     if (await this.connect()) {
       return this.db;
     }

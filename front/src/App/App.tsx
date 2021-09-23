@@ -5,9 +5,9 @@ import { BrowserRouter, Route } from "react-router-dom"
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Services from './components/Services'
-import Portfolio from './components/Portfolio'
-import Boast from './components/Boast'
-import Footer from './components/Footer'
+// import Portfolio from './components/Portfolio'
+// import Boast from './components/Boast'
+// import Footer from './components/Footer'
 
 
 import Chat from './components/Chat'
@@ -21,11 +21,11 @@ function App() {
         <Route path="/">
           {isOpenChat && (<Chat openChat={handleOpenChat}/>)}
           <Header />
-          <Hero openChat={handleOpenChat}/>
-          <Services/>
-          <Portfolio/>
+          {/* <Hero openChat={handleOpenChat}/> */}
+          {/* <Services/> */}
+          {/* <Portfolio/>
           <Boast/>
-          <Footer/>
+          <Footer/> */}
         </Route>
         {/* <Hero openChat={handleOpenChat} /> */}
         {/* <Chat isOpenChat={isOpenChat} closeChat={handleOpenChat} /> */}
