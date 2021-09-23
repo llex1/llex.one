@@ -21,17 +21,15 @@ const authRouter = require("./auth/auth.router");
 // })
 
 class App {
-  constructor() {
-    this.app = null;
-    this.DBclient = null;
-  }
+
+  app = null;
 
   initApp() {
     this.app = express();
   }
 
   async initDB() {
-    this.app.locals.db = await MongoController.run();
+    this.app.locals.db = await (new MongoController(process.env.DB1)).run()
   }
 
   initMiddlewares() {

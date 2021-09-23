@@ -1,12 +1,13 @@
 const { MongoClient } = require("mongodb");
 
-class mongoController {
+class MongoController {
   db = null;
 
-  constructor(poolSize = 5) {
+  constructor(dbName, poolSize = 5) {
     this.client = new MongoClient(process.env.MONGO, {
       maxPoolSize: poolSize,
     });
+    this.dbName = dbName
   }
 
   async run() {
@@ -32,7 +33,7 @@ class mongoController {
   connect = async () => {
     try {
       await this.client.connect();
-      this.db = this.client.db(process.env.DB1);
+      this.db = this.client.db(this.dbName);
       console.log("[\x1b[32m OK \x1b[30m] Altas connection");
     } catch (err) {
       console.log("[\x1b[31m ERR \x1b[30m] Altas connection /connect.catch ");
@@ -53,5 +54,5 @@ class mongoController {
   // };
 }
 
-module.exports = new mongoController();
+module.exports = MongoController;
 

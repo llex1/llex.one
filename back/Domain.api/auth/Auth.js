@@ -2,7 +2,7 @@ class Auth {
   constructor() {}
 
 
-  
+
   async login() {}
 
 
