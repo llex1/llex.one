@@ -3,23 +3,22 @@ const MongoController = require("./helpers/mongoDriver");
 
 const authRouter = require("./auth/auth.router");
 
-const readline = require("readline");
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-  terminal: false
-
-});
+// const readline = require("readline");
+// const rl = readline.createInterface({
+//   input: process.stdin,
+//   output: process.stdout,
+//   terminal: false
+// });
 // rl.on('line', async (input)=>{
 //   console.log(process.MDB?.topology?.s?.state);
 //   await process.MDB.close()
 //   console.log('----- close from Mongo');
 //   console.log(process.MDB?.topology?.s?.state);
 // })
-rl.on('line', async (input)=>{
-    // console.log(input === "1");
-    process.exit()
-})
+// rl.on('line', async (input)=>{
+// console.log(input === "1");
+//     process.exit()
+// })
 
 class App {
   constructor() {
@@ -33,11 +32,10 @@ class App {
 
   async initDB() {
     this.app.locals.db = await MongoController.run();
-    // console.log(this.app.locals.db.s.client.topology.s.state);
   }
 
   initMiddlewares() {
-    this.app.use(MongoController.watcher);
+    // this.app.use(MongoController.watcher);
     this.app.use(express.json());
   }
   initRoutes() {
