@@ -6,15 +6,29 @@
     text-decoration: none;
     color: $light-black-color;
   }
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
-  // border: 1px solid red;
   @media screen and (min-width: 768px) {
     & {
       grid-template-columns: 5rem 1fr 5rem;
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+    }
+  }
+  @media screen and (min-width: 1440px) {
+    & {
+      // grid-template-columns: 5rem 1fr 5rem;
+      // padding-top: 4rem;
+      // padding-bottom: 4rem;
+      padding-left: 0 ;
+      padding-right: 0;
     }
   }
 }
@@ -26,18 +40,18 @@
   height: 5rem;
   border-radius: 50%;
   background-color: $main-color;
-  box-shadow: $logo-shadow $main-color-shadow;
+  box-shadow: $logo-shadow-top $logo-shadow-top-color,
+    $logo-shadow-bottom $logo-shadow-bottom-color;
   &::before {
     content: "";
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-45%, -55%);
+    transform: translate(-47%, -55%);
     display: inline-block;
     width: 3.25rem;
     height: 3.25rem;
-    // background-color: #fff;
-    background-image: url('../../assets/img/lambda.svg');
+    background-image: url("../../assets/img/lambda.svg");
   }
 }
 //navList------------------------------------
@@ -87,7 +101,7 @@
     height: 0.25rem;
     border-radius: 1rem;
     background-color: $white-color;
-    &::before{
+    &::before {
       content: "";
       width: 1.8rem;
       height: 0.25rem;
@@ -97,7 +111,7 @@
       left: 0;
       top: -0.6rem;
     }
-    &::after{
+    &::after {
       content: "";
       width: 1.8rem;
       height: 0.25rem;
@@ -106,7 +120,6 @@
       position: absolute;
       left: 0;
       bottom: -0.6rem;
-
     }
   }
 }

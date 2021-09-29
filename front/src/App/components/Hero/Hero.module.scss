@@ -1,177 +1,46 @@
-.heroSection {
-  background-image: 
-    url("../../assets/img/dots.svg"),
-    url("../../assets/img/cros.svg");
-  background-position: calc(50vw + 566px) 22px, calc(50vw + 639px) 145px;
-  background-repeat: no-repeat;
+@import "../../assets/scss/variables";
 
-  & > .heroContainer {
-    position: relative;
-    margin-bottom: 270px;
-    padding-top: 57px;
-  }
-  .heroTitle {
-    // font-family: inherit;
-    margin-bottom: 1em;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 1.2;
-    color: #666;
-  }
-  .h1 {
-    // font-family: inherit;
-    margin: 0 0 19px;
-    font-size: 60px;
-    font-weight: 700;
-    line-height: 1.2;
-    // color: #25202f;
-    color: #444655;
-  }
-  .heroText {
-    // font-family: inherit;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 1.33;
-    color: #25202f;
-    margin-bottom: 50px;
-  }
-  .heroButton {
-    width: 200px;
-    height: 60px;
-    color: #fdfdff;
-    border: none;
-    border-radius: 50px;
-    background-color: #007aff;
-    box-shadow: 0px 20px 50px rgba(0, 122, 255, 0.25);
-    cursor: pointer;
-  }
-}
-.polygonOne {
-  position: absolute;
-  top: -92px;
-  // top: -68px;
-  right: -65px;
-  width: 656px;
-  height: 625px;
-  // fill: #f6f8ff;
-  fill: #A9D3FF;
-  opacity: 0.7;
-  // fill: rgba(216, 243, 255, 0.9);
-}
-.polygonTwo {
-  position: absolute;
-  top: -109px;
-  // top: -83px;
-  right: -13px;
-  width: 630px;
-  height: 643px;
-  // fill: #414656;
-  fill: #0070F3;
-  // fill: #0060e0;
-  opacity: 0.8;
-}
-.heroImg {
-  position: absolute;
-  top: 0;
-  right: 103px;
-}
-.wave {
-  position: absolute;
-  &.wavePink {
-    top: 26px;
-    right: 77px;
-    width: 62px;
-    height: 44px;
-    fill: #f12b5c;
-  }
-  &.waveGreen {
-    top: 335px;
-    right: 635px;
-    width: 48px;
-    height: 34px;
-    fill: #61b226;
-  }
-  &.waveWhite {
-    top: 398px;
-    right: 76px;
-    width: 62px;
-    height: 44px;
-    fill: #fdfdff;
-  }
-}
-.circle {
-  position: absolute;
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border: none;
-  border-radius: 50%;
-  &.circleOne {
-    top: -141px;
-    right: 197px;
-    background-color: #f57dc8;
-  }
-  &.circleTwo {
-    top: 4px;
-    right: 591px;
-    background-color: #ff59c1;
-  }
-  &.circleThrie {
-    top: 93px;
-    right: 66px;
-    background-color: #43dc77;
-  }
-  &.circleFour {
-    top: 575px;
-    right: 489px;
-    background-color: #8643dc;
-  }
-}
-.cros {
-  position: absolute;
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  &::before {
-    content: "";
-    display: inline-block;
-    width: 14px;
-    height: 2px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform-origin: top left;
-    transform: rotate(45deg) translate(1px, -1px);
-  }
-  &::after {
-    content: "";
-    display: inline-block;
-    width: 14px;
-    height: 2px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform-origin: bottom right;
-    transform: rotate(-45deg) translate(-1px, -2px);
-  }
-  &.crosOne {
-    top: 145px;
-    right: -95px;
-    &::before {
-      background-color: #8643dc;
-    }
-    &::after {
-      background-color: #8643dc;
+
+.heroSection{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2fr 1fr;
+  @media screen and(min-width:768px){
+    &{
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
     }
   }
-  &.crosTwo {
-    top: 455px;
-    right: -2px;
-    &::before {
-      background-color: #09e6df;
-    }
-    &::after {
-      background-color: #09e6df;
-    }
-  }
+}
+.heroImageBlock{
+  position: relative;
+}
+.heroImage {
+  position: absolute;
+  top:0;
+  left: 20px;
+  z-index: 3;
+  
+  
+  
+}
+.heroPolygonFront{
+  width: 653px;
+  height: 635px;
+  position: absolute;
+  top: -35px;
+  left: -89px;
+  fill: $secondary-color;
+  opacity: 0.9;
+  z-index: 2;  
+}
+.heroPolygonBack {
+  width: 483px;
+  height: 522px;
+  position: absolute;
+  top: 46px;
+  left: 20px;
+  fill: $main-color;
+  z-index: 1;  
+
 }

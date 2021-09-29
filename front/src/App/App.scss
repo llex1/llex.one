@@ -10,7 +10,17 @@
   // outline: 1px dotted olive;
 }
 html {
-  font-size: 12px;
+  font-size: 10px;
+  @media screen and (min-width:768px) {
+    &{
+      font-size: 11px;
+    }
+  }
+  @media screen and (min-width:1440px) {
+    &{
+      font-size: 12px;
+    }
+  }
 }
 
 body {
@@ -19,7 +29,7 @@ body {
   // background-position: calc(50vw - 922px) -220px;
   // background-repeat: no-repeat;
   &::before{
-    content: "alpha, only desktop resolution";
+    content: "0.0.1";
     color: red;
     position: fixed;
     bottom: 0;

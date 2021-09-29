@@ -1,10 +1,10 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import styles from './Header.module.scss';
 
 function Header() {
-  const [isBurgerMenuOpen, handleBurgerMenu] = useState(false)
+  // const [isBurgerMenuOpen, handleBurgerMenu] = useState(false)
 
   return (
     <header className={`container ${styles.header}`}>
@@ -21,5 +21,4 @@ function Header() {
     </header>
   )
 }
-
 export default Header

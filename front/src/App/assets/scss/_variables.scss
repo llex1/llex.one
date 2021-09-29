@@ -1,19 +1,18 @@
 //color
 $main-color:#19263F;
-$main-color-shadow: #19263f73;
 $secondary-color:#EDF1F8;
-
 $accent-color:#6E49DD;
-
 $black-color:#202B38;
 $light-black-color:#7E7F86;
-
 $white-color:#FDFDFF;
-
 $hero-text-color: #202B38;
 $hero-text-secondary-color: #666666;
 
 //shadow
-$logo-shadow: 0px 15px 30px;
-
+$logo-shadow-top: 0px -1px 3px;
+$logo-shadow-bottom: 0px 2px 3px ;
 $button-shadow: 0px 15px 30px;
+//shadow color
+$main-color-shadow: #19263f73;
+$logo-shadow-top-color: #F2117D;
+$logo-shadow-bottom-color: rgba(0, 56, 255, 0.62);
