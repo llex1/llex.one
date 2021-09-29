@@ -1,25 +1,112 @@
-.header {
-  padding-top: 50px;
-  padding-bottom: 50px;
-  display: grid;
-  grid-template-columns: 2fr;
-}
-  .logo{
-    display: inline-block;
-    width: 5rem;
-    height: 5rem;
-    border-radius: 50%;
-    background-color: #19263F;
-  }
-  .navlist {
-    display: none;
-  }
+@import "../../assets/scss/variables";
 
-@media screen and (min-width: 768px){
-  .header{
-    grid-template-columns: 12fr;
+//header---------------------------------------
+.header {
+  & a {
+    text-decoration: none;
+    color: $light-black-color;
   }
-  .navlist{
-    display: flex;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  // border: 1px solid red;
+  @media screen and (min-width: 768px) {
+    & {
+      grid-template-columns: 5rem 1fr 5rem;
+    }
+  }
+}
+//logo---------------------------------------
+.logo {
+  position: relative;
+  display: inline-block;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background-color: $main-color;
+  box-shadow: $logo-shadow $main-color-shadow;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-45%, -55%);
+    display: inline-block;
+    width: 3.25rem;
+    height: 3.25rem;
+    // background-color: #fff;
+    background-image: url('../../assets/img/lambda.svg');
+  }
+}
+//navList------------------------------------
+.navlist {
+  display: none;
+  @media screen and (min-width: 768px) {
+    & {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      & > .navlistItem:first-child {
+        margin-left: 8rem;
+      }
+      & > .navlistItem {
+        margin-left: 3.6rem;
+        font-weight: 500;
+        font-size: 1.66rem;
+        line-height: 1.35;
+      }
+    }
+  }
+  @media screen and (min-width: 1440px) {
+    & > .navlistItem:first-child {
+      margin-left: 15rem;
+    }
+  }
+}
+//navButton------------------------------------
+.navButton {
+  justify-self: right;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: none;
+  background-color: $main-color;
+  box-shadow: $button-shadow $main-color-shadow;
+  cursor: pointer;
+
+  .navButtonIcon {
+    position: relative;
+    display: inline-block;
+    width: 1.8rem;
+    height: 0.25rem;
+    border-radius: 1rem;
+    background-color: $white-color;
+    &::before{
+      content: "";
+      width: 1.8rem;
+      height: 0.25rem;
+      border-radius: 1rem;
+      background-color: $white-color;
+      position: absolute;
+      left: 0;
+      top: -0.6rem;
+    }
+    &::after{
+      content: "";
+      width: 1.8rem;
+      height: 0.25rem;
+      border-radius: 1rem;
+      background-color: $white-color;
+      position: absolute;
+      left: 0;
+      bottom: -0.6rem;
+
+    }
   }
 }
