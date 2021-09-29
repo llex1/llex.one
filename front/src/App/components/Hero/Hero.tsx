@@ -12,9 +12,10 @@ function Hero(/* prop:{openChat:(value:boolean) => void} */) {
   return (
     // <section className={`container ${styles.heroSection}`}>
     <section className={`container ${styles.heroSection}`}>
+      
       <div className={styles.heroImageBlock}>
         <picture className={styles.heroImage}>
-          <source srcSet={`${heroImg} 1x, ${heroImg2x} 2x`}></source> 
+          <source srcSet={`${heroImg} 1x, ${heroImg2x} 2x`}></source>
           <img src={heroImg} alt="MDN"></img>
         </picture>
         <svg className={styles.heroPolygonBack}>
@@ -24,8 +25,12 @@ function Hero(/* prop:{openChat:(value:boolean) => void} */) {
           <use href={`${icons}#heroPolygonFront`}></use>
         </svg>
       </div>
-      <div>2fr
 
+      <div className={styles.heroTextBlock}>
+        <p className={styles.heroTitle}>Hello,</p>
+        <h1 className={styles.heroH1}>Alex Tsurka</h1>
+        <p className={styles.heroArticle}>a full stack developer</p>
+        <button className={styles.heroButton}>Let’s Talk</button>
 
       </div>
 

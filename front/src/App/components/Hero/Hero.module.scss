@@ -1,6 +1,6 @@
 @import "../../assets/scss/variables";
 
-
+//hero container --------------------------
 .heroSection{
   display: grid;
   grid-template-columns: 1fr;
@@ -12,17 +12,16 @@
     }
   }
 }
+//image block ----------------------------
 .heroImageBlock{
   position: relative;
+  // border: 1px solid blue;
 }
 .heroImage {
   position: absolute;
   top:0;
   left: 20px;
   z-index: 3;
-  
-  
-  
 }
 .heroPolygonFront{
   width: 653px;
@@ -32,7 +31,19 @@
   left: -89px;
   fill: $secondary-color;
   opacity: 0.9;
-  z-index: 2;  
+  z-index: 2;
+  @media screen and (min-width:768px){
+    &{
+      // width: 353px;
+      // height: 335px;
+    }
+  }
+  @media screen and (min-width:1440px){
+    &{
+      width: 653px;
+      height: 635px;
+    }
+  }
 }
 .heroPolygonBack {
   width: 483px;
@@ -42,5 +53,49 @@
   left: 20px;
   fill: $main-color;
   z-index: 1;  
+}
+//text block ----------------------------
+.heroTextBlock{
+  padding-left: 14rem;
+  padding-top: 3.2rem;
+  // border: 1px solid red;
+}
+.heroTitle{
+  font-size: 2rem;
+  font-weight: 400;
+  list-style: 1.2;
+  color: $hero-text-secondary-color;
+}
+.heroH1{
+  margin-top: 1.6rem;
+  margin-bottom: 1.6rem;
+
+  font-size: 5rem;
+  font-weight: 700;
+  list-style: 1.2;
+  color: $hero-h1-color;
+}
+.heroArticle{
+  position: relative;
+  font-size: 2rem;
+  font-weight: 400;
+  list-style: 1.33;
+  color: $hero-text-color;
+  margin-bottom: 4.2rem;
+}
+.heroButton{
+  cursor: pointer;
+  width: 200px;
+  height: 60px;
+  border-radius: 50px;
+  border: none;
+  background-color: $accent-color;
+  box-shadow: $button-shadow $accent-color-shadow;
+
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 2.6rem;
+  color: $white-color;
+
 
 }
