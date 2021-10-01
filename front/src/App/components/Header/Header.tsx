@@ -14,6 +14,7 @@ function Header() {
         <li className={styles.navlistItem}><Link to='/'>Services</Link></li>
         <li className={styles.navlistItem}><Link to='/'>Works</Link></li>
         <li className={styles.navlistItem}><Link to='/'>{document.documentElement.clientWidth}</Link></li>
+        <li className={styles.navlistItem}><Link to='/'>{document.documentElement.clientHeight}</Link></li>
       </ul>
       {/* <button className={styles.buttonMenu} onClick={()=>handleBurgerMenu(!isBurgerMenuOpen)} ><span className={`${styles.burgerIcon} ${isBurgerMenuOpen && styles.close}`}></span></button> */}
       {/* <div className={`container ${styles.header}`}>llex.one</div> */}

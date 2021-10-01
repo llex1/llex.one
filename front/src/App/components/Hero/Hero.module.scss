@@ -1,101 +1,164 @@
 @import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
 
 //hero container --------------------------
-.heroSection{
+.heroSection {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 2fr 1fr;
-  @media screen and(min-width:768px){
-    &{
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr;
-    }
+  @include adaptive("tablet") {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
   }
 }
 //image block ----------------------------
-.heroImageBlock{
+.heroImageBlock {
   position: relative;
-  // border: 1px solid blue;
 }
 .heroImage {
+  box-sizing: border-box;
   position: absolute;
-  top:0;
+  //?-----------------
+  width: 254px;
+  height: 366px;
+  top: 0;
   left: 20px;
+  //?_________________
   z-index: 3;
+  @include adaptive("tablet") {
+    width: 254px;
+    height: 366px;
+  }
+  @include adaptive("desktop") {
+    width: 395.5px;
+    height: 567px;
+    top: 0;
+    left: 20px;
+  }
 }
-.heroPolygonFront{
-  width: 653px;
-  height: 635px;
+.heroPolygonFront {
   position: absolute;
+
+  width: 422px;
+  height: 410px;
+
+  width: 422px;
+  height: 410px;
   top: -35px;
   left: -89px;
+
   fill: $secondary-color;
   opacity: 0.9;
   z-index: 2;
-  @media screen and (min-width:768px){
-    &{
-      // width: 353px;
-      // height: 335px;
-    }
+  @include adaptive("tablet") {
+    width: 422px;
+    height: 410px;
+    top: -21px;
+    left: -53px;
   }
-  @media screen and (min-width:1440px){
-    &{
-      width: 653px;
-      height: 635px;
-    }
+  @include adaptive("desktop") {
+    width: 653px;
+    height: 635px;
+    top: -35px;
+    left: -89px;
   }
 }
 .heroPolygonBack {
-  width: 483px;
-  height: 522px;
   position: absolute;
-  top: 46px;
-  left: 20px;
+
+  width: 312px;
+  height: 337px;
+  top: 29px;
+  left: 19px;
+
   fill: $main-color;
-  z-index: 1;  
+  z-index: 1;
+  @include adaptive("tablet") {
+    top: 29px;
+    left: 19px;
+    width: 312px;
+    height: 337px;
+  }
+  @include adaptive("desktop") {
+    top: 46px;
+    left: 20px;
+    width: 483px;
+    height: 522px;
+  }
 }
 //text block ----------------------------
-.heroTextBlock{
-  padding-left: 14rem;
-  padding-top: 3.2rem;
-  // border: 1px solid red;
+.heroTextBlock {
+  // padding-left: 14rem;
+  // padding-top: 3.2rem;
+  @include adaptive("tablet") {
+    padding-left: 9rem;
+    padding-top: 2.6rem;
+  }
+  @include adaptive("desktop") {
+    padding-left: 14rem;
+    padding-top: 3.2rem;
+  }
 }
-.heroTitle{
-  font-size: 2rem;
-  font-weight: 400;
-  list-style: 1.2;
+.heroTitle {
   color: $hero-text-secondary-color;
-}
-.heroH1{
-  margin-top: 1.6rem;
-  margin-bottom: 1.6rem;
-
-  font-size: 5rem;
-  font-weight: 700;
-  list-style: 1.2;
-  color: $hero-h1-color;
-}
-.heroArticle{
-  position: relative;
-  font-size: 2rem;
   font-weight: 400;
-  list-style: 1.33;
-  color: $hero-text-color;
-  margin-bottom: 4.2rem;
+  @include adaptive("tablet") {
+    font-size: 1.66rem;
+    line-height: 1.2;
+  }
+  @include adaptive("desktop") {
+    font-size: 2rem;
+  }
 }
-.heroButton{
+.heroH1 {
+  color: $hero-h1-color;
+  @include adaptive("tablet") {
+    margin-top: 1.3rem;
+    margin-bottom: 1.3rem;
+    font-size: 4rem;
+  }
+  @include adaptive("desktop") {
+    margin-top: 1.6rem;
+    margin-bottom: 1.6rem;
+    font-size: 5rem;
+    font-weight: 700;
+    list-style: 1.2;
+  }
+}
+.heroArticle {
+  color: $hero-text-color;
+  @include adaptive('tablet'){
+    font-size: 1.66rem;
+    font-weight: 400;
+    list-style: 1.33;
+    margin-bottom: 3.5rem;
+  }
+  @include adaptive("desktop") {
+    font-size: 2rem;
+    font-weight: 400;
+    list-style: 1.33;
+    margin-bottom: 4.2rem;
+  }
+}
+.heroButton {
   cursor: pointer;
-  width: 200px;
-  height: 60px;
-  border-radius: 50px;
+  color: $white-color;
   border: none;
   background-color: $accent-color;
   box-shadow: $button-shadow $accent-color-shadow;
-
-  font-size: 2rem;
+  border-radius: 50px;
   font-weight: 500;
   line-height: 2.6rem;
-  color: $white-color;
-
-
+  @include adaptive('tablet'){
+    width: 170px;
+    height: 50px;
+    font-size: 1.66rem;
+  }
+  @include adaptive('desktop'){
+    width: 200px;
+    height: 60px;
+    font-size: 2rem;
+    // font-weight: 500;
+    // line-height: 2.6rem;
+  }
 }
