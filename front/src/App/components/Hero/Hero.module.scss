@@ -14,18 +14,22 @@
 //image block ----------------------------
 .heroImageBlock {
   position: relative;
+  height: 280px;
+  @include adaptive('tablet'){
+    height: none;
+  }
 }
 .heroImage {
   box-sizing: border-box;
   position: absolute;
-  //?-----------------
-  width: 254px;
-  height: 366px;
+  width: 160px;
+  height: 230px;
   top: 0;
-  left: 20px;
-  //?_________________
+  left: calc(50% - 120px);
   z-index: 3;
   @include adaptive("tablet") {
+    top: 0;
+    left: 20px;
     width: 254px;
     height: 366px;
   }
@@ -66,10 +70,10 @@
 .heroPolygonBack {
   position: absolute;
 
-  width: 312px;
-  height: 337px;
-  top: 29px;
-  left: 19px;
+  width: 197px;
+  height: 215px;
+  top: 16px;
+  left: calc(50% - 120px);
 
   fill: $main-color;
   z-index: 1;

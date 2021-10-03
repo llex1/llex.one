@@ -7,8 +7,8 @@
     text-decoration: none;
     color: $light-black-color;
   }
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   padding-left: 2rem;
   padding-right: 2rem;
   display: grid;
@@ -30,12 +30,16 @@
 .logo {
   position: relative;
   display: inline-block;
-  width: 5rem;
-  height: 5rem;
+  width: 4.5rem;
+  height: 4.5rem;
   border-radius: 50%;
   background-color: $main-color;
   box-shadow: $logo-shadow-top $logo-shadow-top-color,
     $logo-shadow-bottom $logo-shadow-bottom-color;
+  @include adaptive("tablet"){
+    width: 5rem;
+    height: 5rem;
+  }
   &::before {
     content: "";
     position: absolute;
