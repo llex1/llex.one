@@ -5,7 +5,7 @@ function Skills() {
   return (
     <section className={`container ${styles.skills}`}>
       <p className={styles.title}>Skills</p>
-      <h1>hello from skills</h1>
+      <h2 className={styles.h2}>What  actually I love to do</h2>
     </section>
   )
 }
