@@ -9,14 +9,21 @@
   @include adaptive("tablet") {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
+    // margin-bottom: 15rem;
+  }
+  @include adaptive('desktop'){
+    // margin-bottom: 25rem;
   }
 }
 //image block ----------------------------
 .heroImageBlock {
   position: relative;
-  height: 280px;
+  height: 250px;
   @include adaptive('tablet'){
-    height: none;
+    height: 420px;
+  }
+  @include adaptive('desktop'){
+    height: 620px;
   }
 }
 .heroImage {
@@ -112,7 +119,7 @@
   }
 }
 .heroH1 {
-  margin-top: 1.3rem;
+  margin-top: 0;
   margin-bottom: 1.3rem;
   color: $hero-h1-color;
   font-size: 4.5rem;
@@ -155,7 +162,7 @@
   line-height: 2.6rem;
   width: 170px;
   height: 50px;
-  font-size: 1.66rem;
+  font-size: 1.66rem; 
   @include adaptive('tablet'){
     width: 170px;
     height: 50px;
@@ -165,7 +172,5 @@
     width: 200px;
     height: 60px;
     font-size: 2rem;
-    // font-weight: 500;
-    // line-height: 2.6rem;
   }
 }

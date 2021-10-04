@@ -1,5 +1,5 @@
 import { Fragment } from "react"
-import { BrowserRouter, Route } from "react-router-dom"
+import { BrowserRouter, Route, Switch } from "react-router-dom"
 
 import './App.scss'
 //components
@@ -10,9 +10,11 @@ function App() {
   return (
     <Fragment>
       <BrowserRouter>
-        <Route path="/">
-          <Main/>
-        </Route>
+        <Switch>
+          <Route path="/">
+            <Main />
+          </Route>
+        </Switch>
       </BrowserRouter>
     </Fragment>
   )

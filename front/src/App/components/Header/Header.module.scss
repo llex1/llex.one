@@ -30,8 +30,8 @@
 .logo {
   position: relative;
   display: inline-block;
-  width: 4.5rem;
-  height: 4.5rem;
+  width: 4.4rem;
+  height: 4.4rem;
   border-radius: 50%;
   background-color: $main-color;
   box-shadow: $logo-shadow-top $logo-shadow-top-color,
@@ -84,8 +84,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 5rem;
-  height: 5rem;
+  width: 4.5rem;
+  height: 4.5rem;
+  @include adaptive('tablet'){
+    width: 5rem;
+    height: 5rem;
+  }
   border-radius: 50%;
   border: none;
   background-color: $main-color;
