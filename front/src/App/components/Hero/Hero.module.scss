@@ -6,10 +6,11 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr;
+  margin-bottom: 4rem;
   @include adaptive("tablet") {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
-    // margin-bottom: 15rem;
+    margin-bottom: 1rem;
   }
   @include adaptive('desktop'){
     // margin-bottom: 25rem;
@@ -18,7 +19,7 @@
 //image block ----------------------------
 .heroImageBlock {
   position: relative;
-  height: 250px;
+  height: 240px;
   @include adaptive('tablet'){
     height: 420px;
   }

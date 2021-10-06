@@ -23,7 +23,6 @@ function Skills() {
         </li>
 
 
-
         <li className={styles.listItem}>
           <p className={styles.listItemTitle}>
             <svg className={styles.polygonBack}>
