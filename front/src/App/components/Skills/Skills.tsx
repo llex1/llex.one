@@ -22,7 +22,6 @@ function Skills() {
           <p className={styles.listItemText}>New demos are continually added and buying a single license for Mak gives you access to all of what's shown below, plus everything that will be added in the future.</p>
         </li>
 
-
         <li className={styles.listItem}>
           <p className={styles.listItemTitle}>
             <svg className={styles.polygonBack}>
