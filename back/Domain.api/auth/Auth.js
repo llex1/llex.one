@@ -3,11 +3,24 @@ class Auth {
 
 
 
-  async login() {}
+  async login() {
+
+  }
+  async register(req){
+    return await req.app.locals.db
+      .collection('users')
+      .insertOne({"name": req.body.name, "soname": req.body.soname})
+  }
 
 
 
-  async info(req) {
+
+
+
+
+
+
+  async info(reqdb) {
     // let result;
     // try {
     //   result = await req.app.locals.db

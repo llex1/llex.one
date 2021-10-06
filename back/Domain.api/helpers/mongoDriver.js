@@ -35,6 +35,7 @@ class MongoController {
       this.db = this.client.db(this.dbName);
       console.log("[\x1b[32m OK \x1b[30m] Altas connection");
     } catch (err) {
+      // console.log(err);
       console.log("[\x1b[31m ERR \x1b[30m] Altas connection /connect.catch ");
       return false;
     }
