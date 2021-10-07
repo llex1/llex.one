@@ -12,6 +12,7 @@ class Auth {
     return db.collection(this.collection).insertOne({ email: email, pass: pass });
   }
 
+
   async info(req) {
     // let result;
     // try {
