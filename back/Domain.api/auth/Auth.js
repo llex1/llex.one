@@ -1,21 +1,11 @@
 class Auth {
-  constructor() {}
+  collection = process.env.DB1Collection1
 
-
-
-  async login() {
-
+  register(req){
+    const db = req.app.locals.db;
+    const {email, pass} = req.body
+    return db.collection(this.collection).findOne({email: email})
   }
-  async register(req){
-    return await req.app.locals.db
-      .collection('users')
-      .insertOne({"name": req.body.name, "soname": req.body.soname})
-  }
-
-
-
-
-
 
 
 

@@ -44,7 +44,7 @@ class MongoController {
 
   disconnect = () => {
     this.client.close();
-    console.log("... \n[\x1b[32m OK \x1b[30m] Altas disconnect");
+    console.log("... \n[\x1b[32m OK \x1b[30m] Altas \x1b[31m disconnect \x1b[30m");
   };
 
   // watcher = (req, res, next) => {

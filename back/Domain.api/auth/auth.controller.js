@@ -2,21 +2,29 @@ const AuthModel = require("./Auth");
 
 class AuthController {
 
-  register(req, res, next) {
+  //register------------------------------------
+  async register(req, res, next) {
     console.log('register Conteroller Start');
-    AuthModel.register(req).then(data => console.log('result => ', data))
 
-    res.status('200').send()
-    next();
-  }
-  login(req, res, next) {
+    const result = await AuthModel.register(req);
+    console.log(result);
     
 
+
+    res.status('200').send(result )
     next();
   }
+  //login--------------------------------------
+  login(req, res, next) {
+    
+    
+    next();
+  }
+  //logout-------------------------------------
   logout(req, res, next) {
     next();
   }
+  //info---------------------------------------
   info(req, res, next) {
     // AuthModel.info(req);
 
