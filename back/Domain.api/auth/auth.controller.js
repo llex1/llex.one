@@ -12,9 +12,8 @@ class AuthController {
     // }
     req.body.pass = await bcrypt.hash(req.body.pass, 8)
     const result =  await AuthModel.register(req)
-    const jResult = jwt.sign({id:result.insertedId},process.env.JWT)
-    console.log(jResult);
-    res.status('200').send(result)
+    const token = jwt.sign({id:result.insertedId},process.env.JWT)
+    res.status('200').send({ok: true, token:token})
 
 
 
