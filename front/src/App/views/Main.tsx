@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import Hero from '../components/Hero';
 import Skills from '../components/Skills';
 import Portfolio from "../components/Portfolio";
+import Footer from "../components/Footer";
 
 function Main() {
   return (
@@ -12,6 +13,7 @@ function Main() {
       <Hero/>
       <Skills/>
       <Portfolio/>
+      <Footer/>
     </Fragment>
   );
 }
