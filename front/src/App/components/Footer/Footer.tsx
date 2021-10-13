@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import styles from './Footer.module.scss';
 
 function Footer() {
@@ -6,7 +8,12 @@ function Footer() {
     <footer className={styles.footer}>
       <div className='container'>
         <p className={styles.title}>Contact Me</p>
-        <p className={styles.footerText}>Let me know if you want to talk about a potential collaboration. I'm available for freelance work.</p>
+        <div className={styles.headerBlock}>
+          <p className={styles.footerText}>Let me know if you want to talk about a potential collaboration. I'm available for freelance work.</p>
+          <Link to="/portfolio" className={styles.more}>
+            <span className={styles.moreArrow}></span>
+          </Link>
+        </div>
         <form className={styles.footerForm}>
           <input className={styles.formInput} type="text" name="" id="" />
           <input className={styles.formInput} type="text" name="" id="" />
