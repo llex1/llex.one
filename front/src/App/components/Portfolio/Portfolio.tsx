@@ -12,7 +12,7 @@ function Portfolio() {
     <section className={styles.portfolio}>
       <div className='container'>
         <p className={styles.title}>Portfolio</p>
-        <div className={styles.headerBlock}>
+        <div className={styles.topBlock}>
           <h2 className={styles.h2}>All Creative Projects</h2>
           <Link to="/portfolio" className={styles.more}>
             <span className={styles.moreText}>Explore More</span>
