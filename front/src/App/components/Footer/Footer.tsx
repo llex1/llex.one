@@ -8,7 +8,7 @@ function Footer() {
     <footer className={styles.footer}>
       <div className='container'>
         <p className={styles.title}>Contact Me</p>
-        <div className={styles.headerBlock}>
+        <div className={styles.topBlock}>
           <p className={styles.footerText}>Let me know if you want to talk about a potential collaboration. I'm available for freelance work.</p>
           <Link to="/portfolio" className={styles.more}>
             <span className={styles.moreArrow}></span>
