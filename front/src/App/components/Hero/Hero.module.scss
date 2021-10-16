@@ -1,177 +1,177 @@
-.heroSection {
-  background-image: 
-    url("../../assets/img/dots.svg"),
-    url("../../assets/img/cros.svg");
-  background-position: calc(50vw + 566px) 22px, calc(50vw + 639px) 145px;
-  background-repeat: no-repeat;
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
 
-  & > .heroContainer {
-    position: relative;
-    margin-bottom: 270px;
-    padding-top: 57px;
+//hero container --------------------------
+.heroSection {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  margin-bottom: 4rem;
+  @include adaptive("tablet") {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    margin-bottom: 1rem;
   }
-  .heroTitle {
-    // font-family: inherit;
-    margin-bottom: 1em;
-    font-size: 24px;
-    font-weight: 400;
+  @include adaptive('desktop'){
+    // margin-bottom: 25rem;
+  }
+}
+//image block ----------------------------
+.heroImageBlock {
+  position: relative;
+  height: 240px;
+  @include adaptive('tablet'){
+    height: 420px;
+  }
+  @include adaptive('desktop'){
+    height: 620px;
+  }
+}
+.heroImage {
+  box-sizing: border-box;
+  position: absolute;
+  width: 160px;
+  height: 230px;
+  top: 0;
+  left: calc(50% - 120px + 20px);
+  z-index: 3;
+  @include adaptive("tablet") {
+    top: 0;
+    left: 20px;
+    width: 254px;
+    height: 366px;
+  }
+  @include adaptive("desktop") {
+    width: 395.5px;
+    height: 567px;
+    top: 0;
+    left: 20px;
+  }
+}
+.heroPolygonFront {
+  position: absolute;
+  width: 267px;
+  height: 260px;
+  top: -14px;
+  left: calc(50% - 164px + 20px);
+  fill: $secondary-color;
+  opacity: 0.9;
+  z-index: 2;
+  @include adaptive("tablet") {
+    width: 422px;
+    height: 410px;
+    top: -21px;
+    left: -53px;
+  }
+  @include adaptive("desktop") {
+    width: 653px;
+    height: 635px;
+    top: -35px;
+    left: -89px;
+  }
+}
+.heroPolygonBack {
+  position: absolute;
+
+  width: 197px;
+  height: 215px;
+  top: 16px;
+  left: calc(50% - 120px + 20px);
+
+  fill: $main-color;
+  z-index: 1;
+  @include adaptive("tablet") {
+    top: 29px;
+    left: 19px;
+    width: 312px;
+    height: 337px;
+  }
+  @include adaptive("desktop") {
+    top: 46px;
+    left: 20px;
+    width: 483px;
+    height: 522px;
+  }
+}
+//text block ----------------------------
+.heroTextBlock {
+  // padding-left: 4rem;
+  padding-top: 2rem;
+  @include adaptive("tablet") {
+    padding-left: 9rem;
+    padding-top: 2.6rem;
+  }
+  @include adaptive("desktop") {
+    padding-left: 14rem;
+    padding-top: 3.2rem;
+  }
+}
+.heroTitle {
+  color: $hero-text-secondary-color;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2;
+  @include adaptive("tablet") {
+    font-size: 1.66rem;
     line-height: 1.2;
-    color: #666;
   }
-  .h1 {
-    // font-family: inherit;
-    margin: 0 0 19px;
-    font-size: 60px;
-    font-weight: 700;
-    line-height: 1.2;
-    // color: #25202f;
-    color: #444655;
+  @include adaptive("desktop") {
+    font-size: 2rem;
   }
-  .heroText {
-    // font-family: inherit;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 1.33;
-    color: #25202f;
-    margin-bottom: 50px;
+}
+.heroH1 {
+  margin-top: 0;
+  margin-bottom: 1.3rem;
+  color: $hero-h1-color;
+  font-size: 4.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  @include adaptive("tablet") {
+    margin-top: 1.3rem;
+    margin-bottom: 1.3rem;
+    font-size: 4rem;
   }
-  .heroButton {
+  @include adaptive("desktop") {
+    margin-top: 1.6rem;
+    margin-bottom: 1.6rem;
+    font-size: 5rem;
+  }
+}
+.heroArticle {
+  color: $hero-text-color;
+  font-size: 2rem;
+  list-style: 1.33;
+  font-weight: 400;
+  margin-bottom: 2.6rem;
+  @include adaptive('tablet'){
+    font-size: 1.66rem;
+    margin-bottom: 3.5rem;
+  }
+  @include adaptive("desktop") {
+    font-size: 2rem;
+    margin-bottom: 4.2rem;
+  }
+}
+.heroButton {
+  cursor: pointer;
+  color: $white-color;
+  border: none;
+  background-color: $accent-color;
+  box-shadow: $button-shadow $accent-color-shadow;
+  border-radius: 50px;
+  font-weight: 500;
+  line-height: 2.6rem;
+  width: 170px;
+  height: 50px;
+  font-size: 1.66rem; 
+  @include adaptive('tablet'){
+    width: 170px;
+    height: 50px;
+    font-size: 1.66rem;
+  }
+  @include adaptive('desktop'){
     width: 200px;
     height: 60px;
-    color: #fdfdff;
-    border: none;
-    border-radius: 50px;
-    background-color: #007aff;
-    box-shadow: 0px 20px 50px rgba(0, 122, 255, 0.25);
-    cursor: pointer;
-  }
-}
-.polygonOne {
-  position: absolute;
-  top: -92px;
-  // top: -68px;
-  right: -65px;
-  width: 656px;
-  height: 625px;
-  // fill: #f6f8ff;
-  fill: #A9D3FF;
-  opacity: 0.7;
-  // fill: rgba(216, 243, 255, 0.9);
-}
-.polygonTwo {
-  position: absolute;
-  top: -109px;
-  // top: -83px;
-  right: -13px;
-  width: 630px;
-  height: 643px;
-  // fill: #414656;
-  fill: #0070F3;
-  // fill: #0060e0;
-  opacity: 0.8;
-}
-.heroImg {
-  position: absolute;
-  top: 0;
-  right: 103px;
-}
-.wave {
-  position: absolute;
-  &.wavePink {
-    top: 26px;
-    right: 77px;
-    width: 62px;
-    height: 44px;
-    fill: #f12b5c;
-  }
-  &.waveGreen {
-    top: 335px;
-    right: 635px;
-    width: 48px;
-    height: 34px;
-    fill: #61b226;
-  }
-  &.waveWhite {
-    top: 398px;
-    right: 76px;
-    width: 62px;
-    height: 44px;
-    fill: #fdfdff;
-  }
-}
-.circle {
-  position: absolute;
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border: none;
-  border-radius: 50%;
-  &.circleOne {
-    top: -141px;
-    right: 197px;
-    background-color: #f57dc8;
-  }
-  &.circleTwo {
-    top: 4px;
-    right: 591px;
-    background-color: #ff59c1;
-  }
-  &.circleThrie {
-    top: 93px;
-    right: 66px;
-    background-color: #43dc77;
-  }
-  &.circleFour {
-    top: 575px;
-    right: 489px;
-    background-color: #8643dc;
-  }
-}
-.cros {
-  position: absolute;
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  &::before {
-    content: "";
-    display: inline-block;
-    width: 14px;
-    height: 2px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform-origin: top left;
-    transform: rotate(45deg) translate(1px, -1px);
-  }
-  &::after {
-    content: "";
-    display: inline-block;
-    width: 14px;
-    height: 2px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform-origin: bottom right;
-    transform: rotate(-45deg) translate(-1px, -2px);
-  }
-  &.crosOne {
-    top: 145px;
-    right: -95px;
-    &::before {
-      background-color: #8643dc;
-    }
-    &::after {
-      background-color: #8643dc;
-    }
-  }
-  &.crosTwo {
-    top: 455px;
-    right: -2px;
-    &::before {
-      background-color: #09e6df;
-    }
-    &::after {
-      background-color: #09e6df;
-    }
+    font-size: 2rem;
   }
 }

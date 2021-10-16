@@ -11,20 +11,22 @@ function Portfolio() {
   return (
     <section className={styles.portfolio}>
       <div className='container'>
-        <p className={styles.portfolioTitle}>Portfolio</p>
-        <div className={styles.textBlock}>
-          <h2 className={styles.textBlockH2}>All Creative
-            Projects</h2>
-          <Link to="/" className={styles.textBlockShowMore}>Explore More</Link>
+        <p className={styles.title}>Portfolio</p>
+        <div className={styles.topBlock}>
+          <h2 className={styles.h2}>All Creative Projects</h2>
+          <Link to="/portfolio" className={styles.more}>
+            <span className={styles.moreText}>Explore More</span>
+            <span className={styles.moreArrow}></span>
+          </Link>
         </div>
         <ul className={styles.contentBlock}>
-          <li className={styles.contentBlockItem__blue}>
-            <img className={styles.contentBlock__img2} src={royal2} alt="" />
-            <img className={styles.contentBlock__img1} src={royal1} alt="" />
+          <li className={styles.contentBlockItem}>
+            <img src={royal1} alt="" />
+            <img src={royal2} alt="" />
           </li>
-          <li className={styles.contentBlockItem__yellow}>
-            <img className={styles.contentBlock__img2} src={kapusta2} alt="" />
-            <img className={styles.contentBlock__img1} src={kapusta1} alt="" />
+          <li className={styles.contentBlockItem}>
+            <img src={kapusta1} alt="" />
+            <img src={kapusta2} alt="" />
           </li>
         </ul>
       </div>
