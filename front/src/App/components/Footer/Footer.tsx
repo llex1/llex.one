@@ -20,9 +20,6 @@ function Footer() {
           <input className={styles.formInput} type="text" name="" id="" />
           <button className={styles.footerButton}>Send</button>
         </form>
-        <div><p>end of footer from Air</p></div>
-        <div><p>end of footer from Pro</p></div>
-        {/* <div><p>end of footer from Air</p></div> */}
 
       </div>
     </footer>
