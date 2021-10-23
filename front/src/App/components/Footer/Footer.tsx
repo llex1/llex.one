@@ -14,12 +14,12 @@ function Footer() {
             <span className={styles.moreArrow}></span>
           </Link>
         </div>
-        <form className={styles.footerForm}>
+        {/* <form className={styles.footerForm}>
           <input className={styles.formInput} type="text" name="" id="" />
           <input className={styles.formInput} type="text" name="" id="" />
           <input className={styles.formInput} type="text" name="" id="" />
           <button className={styles.footerButton}>Send</button>
-        </form>
+        </form>  */}
 
       </div>
     </footer>
