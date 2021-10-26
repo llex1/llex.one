@@ -16,6 +16,13 @@ function Footer() {
         </div>
         <div className={'styles.formBlock'}>
           <form className={'styles.form'}>
+            <label htmlFor=""></label>
+            <input className={'styles.formInput'} id="" type="text" />
+            <label htmlFor=""></label>
+            <input className={'styles.formInput'} id="" type="text" />
+            <label htmlFor=""></label>
+            <input className={'styles.formInput'} id="" type="text" />
+            <label htmlFor=""></label>
             <input className={'styles.formInput'} id="" type="text" />
 
           </form>
