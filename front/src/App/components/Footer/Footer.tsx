@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styles from './Footer.module.scss';
 
 function Footer() {
-  
+
   return (
     <footer className={styles.footer}>
       <div className='container'>
@@ -13,6 +13,12 @@ function Footer() {
           <Link to="/portfolio" className={styles.more}>
             <span className={styles.moreArrow}></span>
           </Link>
+        </div>
+        <div className={'styles.formBlock'}>
+          <form className={'styles.form'}>
+            <input className={'styles.formInput'} id="" type="text" />
+
+          </form>
         </div>
       </div>
     </footer>
