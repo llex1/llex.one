@@ -6,7 +6,7 @@ function Footer() {
 
   return (
     <footer className={styles.footer}>
-      <div className='container'>
+      {/* <div className='container'>
         <p className={styles.title}>Contact Me</p>
         <div className={styles.topBlock}>
           <p className={styles.footerText}>Let me know if you want to talk about a potential collaboration. I'm available for freelance work.</p>
@@ -25,7 +25,7 @@ function Footer() {
             <label htmlFor=""></label>
             <input className={'styles.formInput'} id="" type="text" />
 
-          </form>
+          </form> */}
         </div>
       </div>
     </footer>
