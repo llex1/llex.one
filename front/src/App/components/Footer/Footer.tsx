@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import styles from './Footer.module.scss';
 
 function Footer() {
+  const handleFile = (ev:any)=>{
+    console.log(ev);
+  }
+
 
   return (
     <footer className={styles.footer}>
@@ -25,7 +29,7 @@ function Footer() {
             <label htmlFor=""></label>
             <input className={'styles.formInput'} id="" type="text" />
             <input type="file" />
-            <input type="button" />
+            <input type="button" onClick={handleFile} />
 
           </form>
         </div>
