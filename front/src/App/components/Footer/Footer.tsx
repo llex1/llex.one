@@ -24,7 +24,8 @@ function Footer() {
             <input className={'styles.formInput'} id="" type="text" />
             <label htmlFor=""></label>
             <input className={'styles.formInput'} id="" type="text" />
-             <input type="file" />
+            <input type="file" />
+            <input type="button" />
 
           </form>
         </div>
