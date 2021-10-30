@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styles from './Footer.module.scss';
 
 function Footer() {
-  const handleFile = (ev:any)=>{
+  const handleFile = (ev:React.MouseEvent<HTMLElement>)=>{
     console.log(ev);
   }
 
