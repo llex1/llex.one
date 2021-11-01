@@ -1,4 +1,4 @@
-import { useState, useEffect, Fragment } from 'react';
+import { useState, useEffect} from 'react';
 import styles from './Chat.module.scss';
 
 // import Socket from '../../assets/sockets/mainSocket';
