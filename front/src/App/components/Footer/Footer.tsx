@@ -3,10 +3,6 @@ import { Link } from 'react-router-dom';
 import styles from './Footer.module.scss';
 
 function Footer() {
-  // const handleFile = (ev:React.ChangeEvent<HTMLInputElement>)=>{
-  //   console.log(ev);
-  // }
-
 
   return (
     <footer className={styles.footer}>
