@@ -37,7 +37,12 @@
   color: $secondary-color;
 }
 
-//form----------------------------------
+//form block----------------------------------
+.formBlock{
+
+}
+
+
 .form{
   display: flex;
   flex-direction: column;
@@ -48,6 +53,12 @@
   border-bottom: 1px solid $secondary-color;
   margin-bottom: 2rem;
 }
+
+
+
+
+
+
 
 
 

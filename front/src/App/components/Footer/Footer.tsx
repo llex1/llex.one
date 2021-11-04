@@ -18,20 +18,7 @@ function Footer() {
             <span className={styles.moreArrow}></span>
           </Link>
         </div>
-        <div className={'styles.formBlock'}>
-          <form className={'styles.form'}>
-            <label htmlFor=""></label>
-            <input className={'styles.formInput'} id="" type="text" />
-            <label htmlFor=""></label>
-            <input className={'styles.formInput'} id="" type="text" />
-            <label htmlFor=""></label>
-            <input className={'styles.formInput'} id="" type="text" />
-            <label htmlFor=""></label>
-            <input className={'styles.formInput'} id="" type="text" />
-            <input type="file" onChange={handleFile}/>
-            {/* <input type="button" onClick={handleFile} value="this is some button"/> */}
-
-          </form>
+        <div className={styles.formBlock}>
         </div>
       </div>
     </footer>
