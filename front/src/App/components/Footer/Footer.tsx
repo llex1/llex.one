@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom';
 import styles from './Footer.module.scss';
 
 function Footer() {
+  function handleSubmit(e){
+    e.preventDefault()
+    console.log(e);
+  }
+
 
   return (
     <footer className={styles.footer}>
@@ -16,7 +21,7 @@ function Footer() {
           </Link>
         </div>
         {/* -------------form block---------------- */}
-        <form className={styles.formBlock}>
+        <form className={styles.formBlock} onSubmit={handleSubmit}>
           <input type="text" className={styles.inputText} placeholder="What’s your name?" />
           <input type="text" className={styles.inputText} placeholder="Your email" />
           <input type="text" className={styles.inputText} placeholder="Tell me about your project" />
