@@ -7,6 +7,9 @@ function Footer() {
     e.preventDefault()
     console.log(e);
   }
+  function handleChange(e){
+    e.preventDefault()
+  }
 
 
   return (
@@ -21,7 +24,7 @@ function Footer() {
           </Link>
         </div>
         {/* -------------form block---------------- */}
-        <form className={styles.formBlock} onSubmit={handleSubmit}>
+        <form className={styles.formBlock} onChange={handleChange} onSubmit={handleSubmit}>
           <input type="text" className={styles.inputText} placeholder="What’s your name?" />
           <input type="text" className={styles.inputText} placeholder="Your email" />
           <input type="text" className={styles.inputText} placeholder="Tell me about your project" />
