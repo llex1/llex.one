@@ -1,14 +1,19 @@
+import { timingSafeEqual } from 'crypto';
 import { Link } from 'react-router-dom';
+import { isConstructorDeclaration } from 'typescript';
 
 import styles from './Footer.module.scss';
 
 function Footer() {
-  function handleSubmit(e){
+
+  function handleSubmit(e:any){
     e.preventDefault()
     console.log(e);
   }
-  function handleChange(e){
+  function handleChange(e:any){
     e.preventDefault()
+    console.log(e.target);
+    
   }
 
 
