@@ -39,7 +39,7 @@ class App {
   initRoutes() {
     this.app.use("/", express.static(__dirname + "/public/"));
     this.app.use("/auth", authRouter);
-    // this.app.use("/auth1");
+    this.app.use("/auth1");
   }
   run() {
     this.initApp();
