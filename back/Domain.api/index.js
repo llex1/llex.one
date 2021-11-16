@@ -29,7 +29,7 @@ class App {
   }
 
   async initDB() {
-    this.app.locals.db = await (new MongoController(process.env.DB1)).run()
+    this.app.locals.db = await (new MongoController(process.env.MONGO, process.env.DB1)).run()
   }
 
   initMiddlewares() {

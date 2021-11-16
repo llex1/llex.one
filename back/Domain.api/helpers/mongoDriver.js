@@ -3,8 +3,8 @@ const { MongoClient } = require("mongodb");
 class MongoController {
   db = null;
 
-  constructor(dbName, poolSize = 5) {
-    this.client = new MongoClient(process.env.MONGO, {
+  constructor(url, dbName, poolSize = 5) {
+    this.client = new MongoClient(url, {
       maxPoolSize: poolSize,
     });
     this.dbName = dbName
