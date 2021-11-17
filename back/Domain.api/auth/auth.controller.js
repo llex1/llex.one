@@ -1,6 +1,7 @@
 const AuthModel = require("./Auth");
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
+const Validation = require("../helpers/validation");
 
 class AuthController {
   //register------------------------------------
