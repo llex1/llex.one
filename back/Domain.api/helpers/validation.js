@@ -1,11 +1,15 @@
+
+
 class Validation{
 
 
-  email = ()=>{
+  email = (req, res, next)=>{
 
+    next()
   }
-  pass = () =>{
+  pass = (req, res, next) =>{
     
+    next()
   }
 
 
