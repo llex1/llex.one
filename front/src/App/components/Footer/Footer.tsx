@@ -1,14 +1,17 @@
-import { timingSafeEqual } from 'crypto';
+import { useRef } from 'react';
+
 import { Link } from 'react-router-dom';
-import { isConstructorDeclaration } from 'typescript';
 
 import styles from './Footer.module.scss';
 
 function Footer() {
+  const iFile = useRef(null)
+
 
   function handleSubmit(e:any){
     e.preventDefault()
     console.log(e);
+    console.log(iFile);
   }
   function handleChange(e:any){
     e.preventDefault()
@@ -33,7 +36,7 @@ function Footer() {
           <input type="text" className={styles.inputText} placeholder="What’s your name?" />
           <input type="text" className={styles.inputText} placeholder="Your email" />
           <input type="text" className={styles.inputText} placeholder="Tell me about your project" />
-          <input type="submit" className={styles.footerButton} value="Get a Quote" />
+          <input ref={iFile} type="submit" className={styles.footerButton} value="Get a Quote" />
         </form>
       </div>
     </footer>
