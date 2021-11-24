@@ -11,7 +11,6 @@ function Footer() {
   function handleSubmit(e:any){
     e.preventDefault()
     console.log(e);
-    console.log(iFile);
   }
   function handleChange(e:any){
     e.preventDefault()
