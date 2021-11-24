@@ -5,7 +5,7 @@ import styles from './Header.module.scss';
 function Header() {
   // const [isBurgerMenuOpen, handleBurgerMenu] = useState(false)
   const handleBurgerMenu = (e:any)=>{
-    console.log(e);
+    // console.log(e);
   }
 
   return (
