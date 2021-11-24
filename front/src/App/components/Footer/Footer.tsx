@@ -10,11 +10,11 @@ function Footer() {
 
   function handleSubmit(e:any){
     e.preventDefault()
-    console.log(e);
+    // console.log(e);
   }
   function handleChange(e:any){
     e.preventDefault()
-    console.log(e.target);
+    // console.log(e.target);
     
   }
 
