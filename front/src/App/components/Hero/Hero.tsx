@@ -10,7 +10,6 @@ function Hero(/* prop:{openChat:(value:boolean) => void} */) {
 
 
   return (
-    // <section className={`container ${styles.heroSection}`}>
     <section className={`container ${styles.heroSection}`}>
 
       <div className={styles.heroImageBlock}>
